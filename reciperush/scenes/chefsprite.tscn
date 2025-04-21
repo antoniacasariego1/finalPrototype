@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://d31k5sd4idiii"]
+
+[ext_resource type="Texture2D" uid="uid://c1c8i61bb81vq" path="res://sprites/Chef A1.png" id="1_8c83l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu64r"]
+atlas = ExtResource("1_8c83l")
+region = Rect2(16, 28, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ltl"]
+atlas = ExtResource("1_8c83l")
+region = Rect2(32, 28, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsrph"]
+atlas = ExtResource("1_8c83l")
+region = Rect2(48, 28, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loul7"]
+atlas = ExtResource("1_8c83l")
+region = Rect2(64, 28, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4fsq"]
+atlas = ExtResource("1_8c83l")
+region = Rect2(80, 28, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewwco"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu64r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ltl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsrph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loul7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4fsq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ewwco")
+frame_progress = 0.459485
