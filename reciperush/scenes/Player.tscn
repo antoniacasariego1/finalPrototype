@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmrjwvgg33kjg"]
+[gd_scene load_steps=10 format=3 uid="uid://bmrjwvgg33kjg"]
 
 [ext_resource type="Texture2D" uid="uid://c1c8i61bb81vq" path="res://sprites/Chef A1.png" id="1_8c83l"]
+[ext_resource type="Script" path="res://scripts/chefsprite.gd" id="1_qsrjw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu64r"]
 atlas = ExtResource("1_8c83l")
@@ -41,19 +42,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_k4fsq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmg0l"]
 height = 38.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qsrjw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(582, 337)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ewwco")
-frame_progress = 0.186863
+animation = &"walk"
+frame_progress = 0.93881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(582, 337)
 shape = SubResource("CapsuleShape2D_rmg0l")

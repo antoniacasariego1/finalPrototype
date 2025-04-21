@@ -1,11 +1,41 @@
-[gd_scene load_steps=13 format=3 uid="uid://hkwgy83hmb1v"]
+[gd_scene load_steps=15 format=3 uid="uid://hkwgy83hmb1v"]
 
-[ext_resource type="PackedScene" uid="uid://d31k5sd4idiii" path="res://scenes/chefsprite.tscn" id="1_0bf6c"]
+[ext_resource type="PackedScene" uid="uid://bmrjwvgg33kjg" path="res://scenes/Player.tscn" id="1_7y3wk"]
+[ext_resource type="PackedScene" uid="uid://cqtr1u7ih3vxs" path="res://scenes/ingredient.tscn" id="2_j8agr"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_y3hkd"]
 [ext_resource type="Texture2D" uid="uid://b4jom3y4if5im" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_preview_32x32.png" id="3_b6jh5"]
 [ext_resource type="Texture2D" uid="uid://c14sc866nse6u" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_preview_32x32.png" id="4_frm4v"]
 [ext_resource type="Texture2D" uid="uid://bfye4my50erov" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_preview_32x32.png" id="4_wfxji"]
 [ext_resource type="Texture2D" uid="uid://rr3ayq4hln7y" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_Layer_1_32x32.png" id="5_2ln0m"]
+
+[sub_resource type="GDScript" id="GDScript_rnuja"]
+script/source = "extends Node2D
+
+var ingredients_needed = [\"onion\", \"steak\", \"pepper\"]
+var ingredients_collected: Array[String] = []
+
+func _ready():
+	# Connect all ingredient pickup signals
+	for ingredient in get_tree().get_nodes_in_group(\"ingredients\"):
+		ingredient.picked_up.connect(_on_ingredient_picked)
+	update_ui()
+
+func _on_ingredient_picked(name: String):
+	if name in ingredients_needed and name not in ingredients_collected:
+		ingredients_collected.append(name)
+		update_ui()
+		check_completion()
+
+func update_ui():
+	for name in ingredients_needed:
+		var label = $CanvasLayer/Panel.get_node(name.capitalize())
+		label.text = \"%s: %s\" % [name.capitalize(), \"✅\" if name in ingredients_collected else \"❌\"]
+
+func check_completion():
+	if ingredients_collected.size() == ingredients_needed.size():
+		$ExitZone.visible = true
+		
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7srw"]
 texture = ExtResource("2_y3hkd")
@@ -417,15 +447,28 @@ sources/6 = SubResource("TileSetAtlasSource_0vqpe")
 sources/10 = SubResource("TileSetAtlasSource_e3gvk")
 
 [node name="LevelOne" type="Node2D"]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_0bf6c")]
-position = Vector2(15, -1)
+position = Vector2(497, 535)
+script = SubResource("GDScript_rnuja")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-11, 30)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(83, -208)
+
+[node name="Player" parent="." instance=ExtResource("1_7y3wk")]
+position = Vector2(99, -56)
+
+[node name="ingredient_onion" parent="." groups=["ingredients"] instance=ExtResource("2_j8agr")]
+position = Vector2(342, -31)
+
+[node name="ingredient2_steak" parent="." groups=["ingredients"] instance=ExtResource("2_j8agr")]
+position = Vector2(388, -2)
+ingredient_name = "steak"
+
+[node name="ingredient3_pepper" parent="." groups=["ingredients"] instance=ExtResource("2_j8agr")]
+position = Vector2(355, 21)
+ingredient_name = "pepper"
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_8xbg7")
 format = 2
 layer_0/tile_data = PackedInt32Array(-524287, 5, 0, -131076, 65537, 4, -131075, 65537, 4, -131074, 65537, 4, -131073, 65537, 4, -65537, 65537, 4, -65538, 65537, 4, -65539, 65537, 4, -65540, 262144, 16)
