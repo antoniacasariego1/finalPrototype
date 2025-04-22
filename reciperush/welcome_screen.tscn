@@ -40,12 +40,12 @@ theme_override_fonts/font = ExtResource("3_yn3f8")
 theme_override_font_sizes/font_size = 65
 text = "Recipe Rush"
 
+[node name="StartButtons" type="Sprite2D" parent="."]
+position = Vector2(820, 443)
+scale = Vector2(0.389447, 0.390411)
+texture = ExtResource("5_sio1w")
+
 [node name="HowtoButtons" type="Sprite2D" parent="."]
 position = Vector2(820, 545)
 scale = Vector2(0.389322, 0.382706)
 texture = ExtResource("4_dhnfg")
-
-[node name="StartButtons" type="Sprite2D" parent="."]
-position = Vector2(821, 443)
-scale = Vector2(0.389447, 0.390411)
-texture = ExtResource("5_sio1w")
