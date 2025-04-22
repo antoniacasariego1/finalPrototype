@@ -1,7 +1,27 @@
 [gd_scene load_steps=10 format=3 uid="uid://bmrjwvgg33kjg"]
 
 [ext_resource type="Texture2D" uid="uid://c1c8i61bb81vq" path="res://sprites/Chef A1.png" id="1_8c83l"]
-[ext_resource type="Script" path="res://scripts/chefsprite.gd" id="1_qsrjw"]
+
+[sub_resource type="GDScript" id="GDScript_f7axa"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 150
+
+func _physics_process(delta):
+	var input = Vector2(
+		Input.get_action_strength(\"ui_right\") - Input.get_action_strength(\"ui_left\"),
+		Input.get_action_strength(\"ui_down\") - Input.get_action_strength(\"ui_up\")
+	).normalized()
+
+	velocity = input * SPEED
+	move_and_slide()
+
+	var sprite = $AnimatedSprite2D
+	if input == Vector2.ZERO:
+		sprite.stop()
+	else:
+		sprite.play(\"walk\")
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu64r"]
 atlas = ExtResource("1_8c83l")
@@ -50,7 +70,7 @@ animations = [{
 height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_qsrjw")
+script = SubResource("GDScript_f7axa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 3)
@@ -62,3 +82,7 @@ frame_progress = 0.93881
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
 shape = SubResource("CapsuleShape2D_rmg0l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
