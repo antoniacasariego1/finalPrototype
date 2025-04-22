@@ -6,6 +6,7 @@ var ingredients_collected: Array[String] = []
 
 func _ready():
 	# Hide inventory at first
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	$UI/InventoryPanel.visible = false
 
 	# Connect all ingredients in the group
@@ -32,9 +33,14 @@ func _on_ingredient_picked(name: String):
 
 # --- Updates the UI based on what the player has collected
 func update_inventory():
-	$UI/InventoryPanel/SteakIcon.visible = "steak" in ingredients_collected
-	$UI/InventoryPanel/OnionIcon.visible = "onion" in ingredients_collected
-	$UI/InventoryPanel/PepperIcon.visible = "pepper" in ingredients_collected
+	var steak_icon = $UI/InventoryPanel/HBoxContainer/SteakIcon
+	var onion_icon = $UI/InventoryPanel/HBoxContainer/OnionIcon
+	var pepper_icon = $UI/InventoryPanel/HBoxContainer/PepperIcon
+
+	if steak_icon: steak_icon.visible = "steak" in ingredients_collected
+	if onion_icon: onion_icon.visible = "onion" in ingredients_collected
+	if pepper_icon: pepper_icon.visible = "pepper" in ingredients_collected
+
 
 # --- Check if player got all ingredients
 func check_completion():
@@ -50,3 +56,4 @@ func _on_recipe_recipe_picked_up() -> void:
 	recipe_active = true
 	ingredients_needed = ["steak", "onion", "pepper"]
 	$UI/InventoryPanel.visible = true
+	$UI/RecipeTrack.visible = true

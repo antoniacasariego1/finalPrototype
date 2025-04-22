@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hkwgy83hmb1v"]
+[gd_scene load_steps=28 format=3 uid="uid://hkwgy83hmb1v"]
 
 [ext_resource type="Script" path="res://scenes/level_one.gd" id="1_glpaq"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_rmhwu"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://i01y1gkg31do" path="res://assets/Food Icons/Separated Icons/steak.png" id="13_ina7d"]
 [ext_resource type="Texture2D" uid="uid://dvrllpnw35tph" path="res://assets/Food Icons/Separated Icons/onion.png" id="14_d8xre"]
 [ext_resource type="Texture2D" uid="uid://bk4nanaqey4qx" path="res://assets/Food Icons/Separated Icons/pepper.png" id="15_iajou"]
+[ext_resource type="PackedScene" uid="uid://cqtr1u7ih3vxs" path="res://scenes/ingredient.tscn" id="16_x811w"]
+[ext_resource type="Texture2D" uid="uid://cx7j7vrbqgwuy" path="res://assets/recipe.png" id="17_686g8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7srw"]
 texture = ExtResource("2_rmhwu")
@@ -2528,12 +2530,24 @@ layer_2/tile_data = PackedInt32Array(-1048579, 720912, 30, -1048580, 720912, 30,
 [node name="recipe" parent="." instance=ExtResource("11_g1etf")]
 position = Vector2(392, 303)
 
+[node name="onion" parent="." groups=["ingredients"] instance=ExtResource("16_x811w")]
+position = Vector2(729, 169)
+
+[node name="pepper" parent="." groups=["ingredients"] instance=ExtResource("16_x811w")]
+position = Vector2(518, 196)
+ingredient_name = "pepper"
+
+[node name="steak" parent="." groups=["ingredients"] instance=ExtResource("16_x811w")]
+position = Vector2(727, 359)
+ingredient_name = "steak"
+
 [node name="Player" parent="." instance=ExtResource("12_p5h1a")]
 position = Vector2(356, 427)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InventoryPanel" type="Panel" parent="UI"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.176
 anchor_top = 0.108
@@ -2558,6 +2572,7 @@ grow_vertical = 2
 alignment = 1
 
 [node name="SteakIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("13_ina7d")
@@ -2565,6 +2580,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="OnionIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("14_d8xre")
@@ -2572,10 +2588,27 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="PepperIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("15_iajou")
 expand_mode = 3
+stretch_mode = 5
+
+[node name="RecipeTrack" type="TextureRect" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(-3, -3)
+anchors_preset = -1
+anchor_left = 0.867
+anchor_top = 0.036
+anchor_right = 0.966
+anchor_bottom = 0.192
+offset_left = 0.23999
+offset_top = 0.079998
+offset_right = -0.47998
+offset_bottom = -0.240005
+texture = ExtResource("17_686g8")
+expand_mode = 1
 stretch_mode = 5
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
