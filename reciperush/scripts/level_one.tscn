@@ -1,19 +1,23 @@
-[gd_scene load_steps=22 format=3 uid="uid://hkwgy83hmb1v"]
+[gd_scene load_steps=26 format=3 uid="uid://hkwgy83hmb1v"]
 
-[ext_resource type="PackedScene" uid="uid://bmrjwvgg33kjg" path="res://scenes/Player.tscn" id="1_puxdn"]
-[ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_y3hkd"]
-[ext_resource type="Texture2D" uid="uid://b4jom3y4if5im" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_preview_32x32.png" id="3_b6jh5"]
-[ext_resource type="Texture2D" uid="uid://c14sc866nse6u" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_preview_32x32.png" id="4_frm4v"]
-[ext_resource type="Texture2D" uid="uid://bfye4my50erov" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_preview_32x32.png" id="4_wfxji"]
-[ext_resource type="Texture2D" uid="uid://rr3ayq4hln7y" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_Layer_1_32x32.png" id="5_2ln0m"]
-[ext_resource type="Texture2D" uid="uid://bdsiyhg4fh7yb" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_2_32x32.png" id="5_ddlf3"]
-[ext_resource type="Texture2D" uid="uid://ccc7dh44vkiuk" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_layer_2_32x32.png" id="6_7nv2d"]
-[ext_resource type="Texture2D" uid="uid://6vos08pp88mj" path="res://assets/12_Kitchen_32x32.png" id="7_h363t"]
-[ext_resource type="Texture2D" uid="uid://ckld22qxv5ecw" path="res://assets/16_Grocery_store_32x32.png" id="8_421na"]
-[ext_resource type="PackedScene" uid="uid://b6776vbbwb4lo" path="res://scenes/recipe.tscn" id="10_h8u1l"]
+[ext_resource type="Script" path="res://scenes/level_one.gd" id="1_glpaq"]
+[ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_rmhwu"]
+[ext_resource type="Texture2D" uid="uid://b4jom3y4if5im" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_preview_32x32.png" id="3_c2u6s"]
+[ext_resource type="Texture2D" uid="uid://c14sc866nse6u" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_preview_32x32.png" id="4_pb2k2"]
+[ext_resource type="Texture2D" uid="uid://bdsiyhg4fh7yb" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_2_32x32.png" id="5_21hlp"]
+[ext_resource type="Texture2D" uid="uid://ccc7dh44vkiuk" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_layer_2_32x32.png" id="6_uw4w8"]
+[ext_resource type="Texture2D" uid="uid://6vos08pp88mj" path="res://assets/12_Kitchen_32x32.png" id="7_buwv7"]
+[ext_resource type="Texture2D" uid="uid://ckld22qxv5ecw" path="res://assets/16_Grocery_store_32x32.png" id="8_gs5n1"]
+[ext_resource type="Texture2D" uid="uid://bfye4my50erov" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_preview_32x32.png" id="9_ds0kh"]
+[ext_resource type="Texture2D" uid="uid://rr3ayq4hln7y" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_Layer_1_32x32.png" id="10_4x7ea"]
+[ext_resource type="PackedScene" uid="uid://b6776vbbwb4lo" path="res://scenes/recipe.tscn" id="11_g1etf"]
+[ext_resource type="PackedScene" uid="uid://bmrjwvgg33kjg" path="res://scenes/Player.tscn" id="12_p5h1a"]
+[ext_resource type="Texture2D" uid="uid://i01y1gkg31do" path="res://assets/Food Icons/Separated Icons/steak.png" id="13_ina7d"]
+[ext_resource type="Texture2D" uid="uid://dvrllpnw35tph" path="res://assets/Food Icons/Separated Icons/onion.png" id="14_d8xre"]
+[ext_resource type="Texture2D" uid="uid://bk4nanaqey4qx" path="res://assets/Food Icons/Separated Icons/pepper.png" id="15_iajou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7srw"]
-texture = ExtResource("2_y3hkd")
+texture = ExtResource("2_rmhwu")
 texture_region_size = Vector2i(32, 32)
 2:11/0 = 0
 2:8/0 = 0
@@ -175,7 +179,7 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxr70"]
-texture = ExtResource("3_b6jh5")
+texture = ExtResource("3_c2u6s")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 3:0/0 = 0
@@ -336,15 +340,15 @@ texture_region_size = Vector2i(32, 32)
 12:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3gvk"]
-texture = ExtResource("4_frm4v")
+texture = ExtResource("4_pb2k2")
 texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njg3n"]
-texture = ExtResource("5_ddlf3")
+texture = ExtResource("5_21hlp")
 texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_of3x3"]
-texture = ExtResource("6_7nv2d")
+texture = ExtResource("6_uw4w8")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -404,7 +408,7 @@ texture_region_size = Vector2i(32, 32)
 6:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecy33"]
-texture = ExtResource("7_h363t")
+texture = ExtResource("7_buwv7")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -1135,7 +1139,7 @@ texture_region_size = Vector2i(32, 32)
 10:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tfuw"]
-texture = ExtResource("8_421na")
+texture = ExtResource("8_gs5n1")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -2237,13 +2241,13 @@ texture_region_size = Vector2i(32, 32)
 10:77/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3g28"]
-texture = ExtResource("4_wfxji")
+texture = ExtResource("9_ds0kh")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(19, 13)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vqpe"]
-texture = ExtResource("5_2ln0m")
+texture = ExtResource("10_4x7ea")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
@@ -2506,6 +2510,7 @@ sources/16 = SubResource("TileSetAtlasSource_ecy33")
 sources/17 = SubResource("TileSetAtlasSource_8tfuw")
 
 [node name="LevelOne" type="Node2D"]
+script = ExtResource("1_glpaq")
 
 [node name="TileMapkitchen" type="TileMap" parent="."]
 position = Vector2(519, 600)
@@ -2520,8 +2525,58 @@ layer_2/name = "Top"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-1048579, 720912, 30, -1048580, 720912, 30, -1048581, 720912, 30, -1048582, 720912, 30, -524298, 524304, 8, -524297, 589840, 8, -524296, 655376, 11, -983046, 983056, 36, -917510, 983056, 37, -1048570, 589840, 33, -983034, 458768, 8, -983042, 16, 37, -1048576, 786448, 29, -1114112, 655376, 31, -1048578, 16, 36, -1048574, 16, 18, -1048575, 720912, 34, -983044, 917520, 35, -983043, 983056, 35, -1114109, 65552, 17, -1048573, 65552, 18, -1114110, 16, 17, -524295, 786448, 7, -589826, 16, 24, -589825, 65552, 24, -655359, 16, 22, -655358, 131088, 24, -720898, 655376, 34, -786428, 786448, 34, -655356, 524304, 46, -786432, 786448, 47)
 
-[node name="recipe" parent="." instance=ExtResource("10_h8u1l")]
+[node name="recipe" parent="." instance=ExtResource("11_g1etf")]
+position = Vector2(392, 303)
+
+[node name="Player" parent="." instance=ExtResource("12_p5h1a")]
 position = Vector2(356, 427)
 
-[node name="Player" parent="." instance=ExtResource("1_puxdn")]
-position = Vector2(356, 427)
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryPanel" type="Panel" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.176
+anchor_top = 0.108
+anchor_right = 0.305
+anchor_bottom = 0.196
+offset_left = 0.247986
+offset_top = 0.0159988
+offset_right = -0.360016
+offset_bottom = -0.00800323
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/InventoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.02
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.12
+offset_right = 10.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SteakIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("13_ina7d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="OnionIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("14_d8xre")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PepperIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("15_iajou")
+expand_mode = 3
+stretch_mode = 5
+
+[connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
+[connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_recipe_picked_up"]

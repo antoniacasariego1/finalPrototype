@@ -43,3 +43,10 @@ func check_completion():
 		# Show exit / trigger next level here
 		if $ExitZone:
 			$ExitZone.visible = true
+
+
+func _on_recipe_recipe_picked_up() -> void:
+	print("Recipe picked up!")
+	recipe_active = true
+	ingredients_needed = ["steak", "onion", "pepper"]
+	$UI/InventoryPanel.visible = true
