@@ -53,12 +53,12 @@ height = 38.0
 script = ExtResource("1_qsrjw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(582, 337)
+position = Vector2(1, 3)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ewwco")
 animation = &"walk"
 frame_progress = 0.93881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(582, 337)
+position = Vector2(1, 3)
 shape = SubResource("CapsuleShape2D_rmg0l")

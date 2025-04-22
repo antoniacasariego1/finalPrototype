@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6776vbbwb4lo"]
+
+[ext_resource type="Script" path="res://scripts/recipe.gd" id="1_rkwax"]
+[ext_resource type="Texture2D" uid="uid://cx7j7vrbqgwuy" path="res://assets/recipe.png" id="2_wuuc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oame7"]
+size = Vector2(79, 104)
+
+[node name="recipe" type="Area2D"]
+script = ExtResource("1_rkwax")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_wuuc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_oame7")
