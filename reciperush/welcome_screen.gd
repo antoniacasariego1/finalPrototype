@@ -12,5 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		get_tree().change_scene_to_file("res://scenes/level_one.tscn")
+	if event is InputEventMouseButton:
+		print("Clicked with mouse")  # <--- this MUST show
+		if event.pressed:
+			print("Start button pressed!")
+			get_tree().change_scene_to_file("res://scenes/level_one.tscn")

@@ -11,7 +11,7 @@
 size = Vector2(937.528, 194.002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5eahl"]
-size = Vector2(362, 75.5)
+size = Vector2(385, 96)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uge78")
@@ -53,12 +53,10 @@ position = Vector2(820, 545.938)
 scale = Vector2(0.389322, 0.376284)
 
 [node name="HowtoButtons" type="Sprite2D" parent="HowToButton"]
-scale = Vector2(1, 1)
 texture = ExtResource("4_dhnfg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HowToButton"]
 position = Vector2(-1.28442, 6.80981)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i0kmh")
 
 [node name="StartButton" type="Area2D" parent="."]
@@ -70,7 +68,7 @@ scale = Vector2(0.389447, 0.390411)
 texture = ExtResource("5_sio1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton"]
-position = Vector2(-4, -3)
+position = Vector2(-1.5, -3)
 shape = SubResource("RectangleShape2D_5eahl")
 
 [connection signal="input_event" from="StartButton" to="." method="_on_start_button_input_event"]

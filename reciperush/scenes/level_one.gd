@@ -15,7 +15,7 @@ func _ready():
 
 # --- When the player picks up the recipe
 func _on_recipe_picked_up():
-	print("📜 Recipe picked up!")
+	print("Recipe picked up!")
 	recipe_active = true
 	ingredients_needed = ["steak", "onion", "pepper"]
 	$UI/InventoryPanel.visible = true
@@ -45,7 +45,7 @@ func update_inventory():
 # --- Check if player got all ingredients
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
-		print("✅ All ingredients collected!")
+		print("All ingredients collected!")
 		# Show exit / trigger next level here
 		if $ExitZone:
 			$ExitZone.visible = true
