@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cp2hsygbv30ou"]
+[gd_scene load_steps=23 format=4 uid="uid://cp2hsygbv30ou"]
 
 [ext_resource type="PackedScene" uid="uid://cyhaa8ndmos6x" path="res://scenes/mouse.tscn" id="1_3i6ej"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_qfj3s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bfye4my50erov" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_preview_32x32.png" id="9_d5845"]
 [ext_resource type="Texture2D" uid="uid://rr3ayq4hln7y" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_Layer_1_32x32.png" id="10_aeote"]
 [ext_resource type="PackedScene" uid="uid://bp0edyn4ksldc" path="res://scenes/ingredient.tscn" id="11_vo3iu"]
+[ext_resource type="PackedScene" uid="uid://c5n0e7nxcnna4" path="res://scenes/Player.tscn" id="12_f6ter"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np700"]
 texture = ExtResource("2_qfj3s")
@@ -2529,9 +2530,6 @@ sources/17 = SubResource("TileSetAtlasSource_fip8b")
 
 [node name="Level2" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_3i6ej")]
-position = Vector2(293, 326)
-
 [node name="TileMapkitchen" type="TileMap" parent="."]
 position = Vector2(519, 600)
 tile_set = SubResource("TileSet_7uni8")
@@ -2563,8 +2561,14 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD9/+//EAALAB4AAAD8/+//EAALAB4AAAD7/+//EAALAB4AAAD6/+//EAALAB4AAAD2//f/EAAIAAgAAAD3//f/EAAJAAgAAAD4//f/EAAKAAsAAAD6//D/EAAPACQAAAD6//H/EAAPACUAAAAGAPD/EAAJACEAAAAGAPH/EAAHAAgAAAD+//D/EAAAACUAAAAAAPD/EAAMAB0AAAAAAO//EAAKAB8AAAD+/+//EAAAACQAAAACAPD/EAAAABIAAAABAPD/EAALACIAAAD8//D/EAAOACMAAAD9//D/EAAPACMAAAADAO//EAABABEAAAADAPD/EAABABIAAAACAO//EAAAABEAAAD5//f/EAAMAAcAAAD+//b/EAAAABgAAAD///b/EAABABgAAAABAPb/EAAAABYAAAACAPb/EAACABgAAAD+//T/EAAKACIAAAAEAPT/EAAMACIAAAAEAPb/EAAIAC4AAAAAAPT/EAAMAC8AAAD7//n/CAAIAAAAAAD8//n/AAAIAAgAAAD8//r/AAAIAAkAAAD7//r/CAAIAAEAAAD6//r/AwAHAAEAAAD6//n/AwAHAAAAAAD5//r/AwAGAAEAAAD6//v/CAAHAAIAAAD5//v/CAAGAAIAAAD5//n/AAAFAAgAAAD+//f/EQALACkAAAA=")
 tile_set = SubResource("TileSet_7uni8")
 
-[node name="ingredient" parent="TileMapkitchen" instance=ExtResource("11_vo3iu")]
-position = Vector2(126, -250)
-
 [node name="mouse" parent="." instance=ExtResource("1_3i6ej")]
 position = Vector2(372, 306)
+
+[node name="ingredient" parent="." instance=ExtResource("11_vo3iu")]
+position = Vector2(645, 350)
+
+[node name="Player" parent="." instance=ExtResource("12_f6ter")]
+position = Vector2(375, 470)
+
+[node name="ingredient2" parent="." instance=ExtResource("11_vo3iu")]
+position = Vector2(371, 430)

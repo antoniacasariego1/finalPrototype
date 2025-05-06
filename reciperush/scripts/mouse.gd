@@ -18,3 +18,9 @@ func find_new_target():
 	var ingredients = get_tree().get_nodes_in_group("ingredients")
 	if ingredients.size() > 0:
 		target_ingredient = ingredients[randi() % ingredients.size()]
+		
+		
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		print("Rat clicked!")
+		queue_free()

@@ -183,6 +183,7 @@ animations = [{
 radius = 5.0
 
 [node name="mouse" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_chyk6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
