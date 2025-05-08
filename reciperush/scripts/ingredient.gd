@@ -4,24 +4,26 @@ extends Area2D
 @export var can_be_stolen: bool = true
 signal picked_up(name: String)
 
-var ingredient_textures = {
+var ingredient_textures := {
 	"onion": preload("res://assets/Food Icons/Separated Icons/onion.png"),
 	"steak": preload("res://assets/Food Icons/Separated Icons/steak.png"),
 	"pepper": preload("res://assets/Food Icons/Separated Icons/pepper.png")
 }
 
-func _ready():
+func _ready() -> void:
 	if ingredient_textures.has(ingredient_name):
 		$Sprite2D.texture = ingredient_textures[ingredient_name]
 	else:
 		print("Missing texture for:", ingredient_name)
 
-	# Optional: add this node to "ingredients" group for AI targeting
 	add_to_group("ingredients")
 
-func _on_body_entered(body: Node):
+func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
+		if $PickupSound:
+			$PickupSound.play()
 		picked_up.emit(ingredient_name)
+		await get_tree().create_timer(0.2).timeout
 		queue_free()
 
 	elif body.name == "mouse" and can_be_stolen:

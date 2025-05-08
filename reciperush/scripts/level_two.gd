@@ -39,13 +39,15 @@ func update_inventory():
 # --- Check if player got all ingredients
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
-		print("All ingredients collected! Moving to Level 2...")
+		print("All ingredients collected! Moving to Level 3...")
 		await get_tree().create_timer(0.5).timeout  # short delay for sound
-		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_three.tscn")
 
 
 
-func _on_recipe_recipe_picked_up() -> void:
+
+
+func _on_recipe_picked_up() -> void:
 	$RecipePickUp.play()
 	if $KitchenDoor:                       # safety check
 		$KitchenDoor.queue_free()          # unlock passage

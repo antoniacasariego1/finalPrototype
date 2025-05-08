@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxuwb38605n8k"]
+
+[ext_resource type="Script" path="res://scripts/welcome_screen.gd" id="1_uh6dj"]
+[ext_resource type="Texture2D" uid="uid://d4gdvd777ppqn" path="res://assets/fonts/Screenshot 2025-04-21 at 10.48.20 PM.png" id="2_bxom4"]
+[ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="3_kebrq"]
+[ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_bwlq2"]
+[ext_resource type="Texture2D" uid="uid://ddk0n6m6hgdpv" path="res://assets/HOWTOButtons.png" id="5_ocdj3"]
+[ext_resource type="Texture2D" uid="uid://cblwnblq5twlw" path="res://assets/STARTButtons.png" id="6_4vv5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0kmh"]
+size = Vector2(576.643, 148.824)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eahl"]
+size = Vector2(219, 48)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uh6dj")
+
+[node name="Screenshot2025-04-21At10_48_20Pm" type="Sprite2D" parent="."]
+position = Vector2(617, 319)
+scale = Vector2(0.532131, 0.568447)
+texture = ExtResource("2_bxom4")
+
+[node name="Welcome" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.716
+offset_top = -223.416
+offset_right = -1840.71
+offset_bottom = -1200.42
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_kebrq")
+theme_override_font_sizes/font_size = 60
+text = "Welcome"
+
+[node name="Welcome2" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.6186
+offset_top = -128.42
+offset_right = -1686.62
+offset_bottom = -1105.42
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_kebrq")
+theme_override_font_sizes/font_size = 50
+text = "to"
+
+[node name="Welcome3" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -313.832
+offset_top = -28.1469
+offset_right = -1827.83
+offset_bottom = -1005.14
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_bwlq2")
+theme_override_font_sizes/font_size = 65
+text = "Recipe Rush"
+metadata/_edit_use_anchors_ = true
+
+[node name="HowToButton" type="Area2D" parent="."]
+position = Vector2(801, 542)
+scale = Vector2(0.389322, 0.376284)
+
+[node name="HowtoButtons" type="Sprite2D" parent="HowToButton"]
+position = Vector2(-470.048, -193.838)
+scale = Vector2(0.600114, 0.600114)
+texture = ExtResource("5_ocdj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HowToButton"]
+position = Vector2(-468.121, -183.207)
+shape = SubResource("RectangleShape2D_i0kmh")
+
+[node name="StartButton" type="Area2D" parent="."]
+position = Vector2(798, 426)
+
+[node name="StartButtons" type="Sprite2D" parent="StartButton"]
+position = Vector2(-181, -22)
+scale = Vector2(0.235718, 0.236302)
+texture = ExtResource("6_4vv5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton"]
+position = Vector2(-181.5, -27)
+shape = SubResource("RectangleShape2D_5eahl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(592, 317)
+zoom = Vector2(3, 3)
+
+[connection signal="input_event" from="StartButton" to="." method="_on_start_button_input_event"]

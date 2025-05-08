@@ -5,6 +5,23 @@
 [sub_resource type="GDScript" id="GDScript_f7axa"]
 script/source = "extends CharacterBody2D
 
+func _ready() -> void:
+	$Camera2D.make_current()
+	var cam := $Camera2D               # short reference
+	cam.enabled = true                 # make this camera active
+
+	# centre‑follow mode (no dead‑zone)
+	cam.anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
+	cam.drag_horizontal_enabled = false
+	cam.drag_vertical_enabled = false
+
+	# limits that match your map (adjust if needed)
+	cam.limit_left   = 0
+	cam.limit_top    = 0
+	cam.limit_right  = 800   # map width  in pixels
+	cam.limit_bottom = 640   # map height in pixels
+
+
 const SPEED = 150
 
 func _physics_process(delta):
@@ -73,16 +90,25 @@ height = 38.0
 script = SubResource("GDScript_f7axa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 3)
+position = Vector2(77, 63)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ewwco")
 animation = &"walk"
 frame_progress = 0.93881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
+position = Vector2(78, 70)
 shape = SubResource("CapsuleShape2D_rmg0l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+position = Vector2(79, 61)
+zoom = Vector2(7, 7)
+limit_left = 0
+limit_top = 0
+limit_right = 800
+limit_bottom = 640
 position_smoothing_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0

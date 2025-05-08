@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp0edyn4ksldc"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0edyn4ksldc"]
 
 [ext_resource type="Script" path="res://scripts/ingredient.gd" id="1_orqv2"]
 [ext_resource type="Texture2D" uid="uid://dago7a3eneols" path="res://assets/Food Icons/Separated Icons/icon_56.png" id="2_p6yfa"]
+[ext_resource type="AudioStream" uid="uid://r1cpesggenm4" path="res://sounds/pick_ingredient.wav" id="3_nj5x5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5b1s"]
 radius = 7.0
@@ -15,4 +16,8 @@ texture = ExtResource("2_p6yfa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g5b1s")
 
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nj5x5")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
