@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsco164ej2xd6"]
+[gd_scene load_steps=9 format=3 uid="uid://bsco164ej2xd6"]
 
 [ext_resource type="Texture2D" uid="uid://d4gdvd777ppqn" path="res://assets/fonts/Screenshot 2025-04-21 at 10.48.20 PM.png" id="2_g8lpw"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="3_rhdk4"]
 [ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_o5sxi"]
+[ext_resource type="Script" path="res://scripts/how_to_button.gd" id="4_w4h1v"]
 [ext_resource type="Texture2D" uid="uid://ddk0n6m6hgdpv" path="res://assets/HOWTOButtons.png" id="5_yxb0i"]
 [ext_resource type="Texture2D" uid="uid://cblwnblq5twlw" path="res://assets/STARTButtons.png" id="6_cjdvo"]
 
@@ -49,6 +50,7 @@ text = "Recipe Rush"
 [node name="HowToButton" type="Area2D" parent="."]
 position = Vector2(820, 545.938)
 scale = Vector2(0.389322, 0.376284)
+script = ExtResource("4_w4h1v")
 
 [node name="HowtoButtons" type="Sprite2D" parent="HowToButton"]
 texture = ExtResource("5_yxb0i")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://0yjg3e2tk3pw"]
+
+[ext_resource type="Texture2D" uid="uid://ollfq1b3sv6k" path="res://scenes/howto.png" id="1_ehjhw"]
+[ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="2_gvajk"]
+[ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_23nt4"]
+[ext_resource type="Script" path="res://scripts/back.gd" id="4_5b2h5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hakdh"]
+size = Vector2(342.439, 124.566)
+
+[node name="HowTo" type="Node2D"]
+
+[node name="Frame2" type="Sprite2D" parent="."]
+position = Vector2(1531.5, 1013.89)
+scale = Vector2(1.33435, 1.45419)
+texture = ExtResource("1_ehjhw")
+
+[node name="Label2" type="Label" parent="Frame2"]
+offset_left = -406.024
+offset_top = 267.423
+offset_right = 188.976
+offset_bottom = 412.423
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 55
+text = "Collect the 
+Ingredients"
+
+[node name="Label3" type="Label" parent="Frame2/Label2"]
+offset_left = 971.166
+offset_top = -480.401
+offset_right = 1569.17
+offset_bottom = -335.401
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 55
+text = "Avoid the 
+Rats"
+
+[node name="Label2" type="Label" parent="Frame2/Label2"]
+offset_left = 861.429
+offset_top = 36.2969
+offset_right = 1459.43
+offset_bottom = 181.297
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 55
+text = "Cook the Dish!"
+
+[node name="Label" type="Label" parent="Frame2"]
+offset_left = -480.096
+offset_top = -221.518
+offset_right = 114.904
+offset_bottom = -76.5181
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 65
+text = "Collect the 
+Recipe"
+
+[node name="Welcome" type="Label" parent="Frame2"]
+offset_left = -469.122
+offset_top = -531.11
+offset_right = 605.878
+offset_bottom = -394.11
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_23nt4")
+theme_override_font_sizes/font_size = 100
+text = "How to Play?"
+
+[node name="Area2D" type="Area2D" parent="Frame2"]
+script = ExtResource("4_5b2h5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame2/Area2D"]
+position = Vector2(-928.399, -589.122)
+shape = SubResource("RectangleShape2D_hakdh")
