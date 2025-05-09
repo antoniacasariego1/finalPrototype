@@ -8,6 +8,7 @@
 radius = 7.0
 
 [node name="ingredient" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_orqv2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

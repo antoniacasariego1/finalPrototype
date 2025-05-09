@@ -38,6 +38,17 @@ func _physics_process(delta):
 		sprite.stop()
 	else:
 		sprite.play(\"walk\")
+		
+var ingredients_collected: Array[String] = []
+
+func has_ingredients() -> bool:
+	return ingredients_collected.size() > 0
+
+func lose_random_ingredient() -> String:
+	if ingredients_collected.is_empty():
+		return \"\"
+	var idx = randi() % ingredients_collected.size()
+	return ingredients_collected.pop_at(idx)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu64r"]
@@ -84,20 +95,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmg0l"]
-height = 38.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
 script = SubResource("GDScript_f7axa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(77, 63)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ewwco")
 animation = &"walk"
 frame_progress = 0.93881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(78, 70)
+position = Vector2(78, 64)
 shape = SubResource("CapsuleShape2D_rmg0l")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -7,7 +7,11 @@ signal picked_up(name: String)
 var ingredient_textures := {
 	"onion": preload("res://assets/Food Icons/Separated Icons/onion.png"),
 	"steak": preload("res://assets/Food Icons/Separated Icons/steak.png"),
-	"pepper": preload("res://assets/Food Icons/Separated Icons/pepper.png")
+	"pepper": preload("res://assets/Food Icons/Separated Icons/pepper.png"), 
+	"corn": preload("res://assets/Food Icons/Separated Icons/corn.png"),
+	"avocado": preload("res://assets/Food Icons/Separated Icons/avocado.png"),
+	"egg": preload("res://assets/Food Icons/Separated Icons/egg.png"),
+	"chicken": preload("res://assets/Food Icons/Separated Icons/chicken.png")
 }
 
 func _ready() -> void:
@@ -28,3 +32,4 @@ func _on_body_entered(body: Node) -> void:
 	elif body.name == "mouse" and can_be_stolen:
 		print(ingredient_name, "was stolen by a mouse!")
 		queue_free()
+		get_tree().reload_current_scene()
