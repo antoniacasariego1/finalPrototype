@@ -3,20 +3,15 @@ extends Node2D
 var recipe_active = false
 var ingredients_needed: Array[String] = []
 var ingredients_collected: Array[String] = []
-
 var all_ingredients_collected = false
 
 func _ready():
-	# Hide inventory at first
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	$UI/InventoryPanel.visible = false
 
-	# Connect all ingredients in the group
 	for ingredient in get_tree().get_nodes_in_group("ingredients"):
 		ingredient.picked_up.connect(_on_ingredient_picked)
 
-
-# --- When an ingredient is picked up
 func _on_ingredient_picked(name: String):
 	if not recipe_active:
 		return
@@ -25,12 +20,10 @@ func _on_ingredient_picked(name: String):
 		ingredients_collected.append(name)
 		update_inventory()
 		check_completion()
-	
+
 	if ingredients_collected.size() >= 1:
 		spawn_rat_near_player()
-		
 
-# --- Updates the UI based on what the player has collected
 func update_inventory():
 	var corn_icon = $UI/InventoryPanel/HBoxContainer/CornIcon
 	var avocado_icon = $UI/InventoryPanel/HBoxContainer/AvocadoIcon
@@ -42,8 +35,6 @@ func update_inventory():
 	if egg_icon: egg_icon.visible = "egg" in ingredients_collected
 	if chicken_icon: chicken_icon.visible = "chicken" in ingredients_collected
 
-
-# --- Check if player got all ingredients
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
 		print("All ingredients collected! Go to the stove.")
@@ -51,12 +42,21 @@ func check_completion():
 		if $Stove:
 			$Stove.set_interactable(true)
 
-# --- Called by stove.gd after cooking finishes
+		# Clear all rats
+		for node in get_tree().get_nodes_in_group("mice"):
+			if is_instance_valid(node):
+				node.queue_free()
+
+		# Backup: clear any orphaned children that start with "Mouse"
+		for node in get_tree().get_nodes_in_group("Node2D"):
+			if node.name.begins_with("Mouse"):
+				node.queue_free()
+
 func on_cooking_finished():
 	print("Cooking complete! Moving to Level 2...")
 	get_tree().change_scene_to_file("res://scenes/level_two.tscn")
 
-func _on_recipe_picked_up() -> void:
+func _on_recipe_picked_up():
 	$RecipePickUp.play()
 	if $KitchenDoor:
 		$KitchenDoor.queue_free()
@@ -69,8 +69,8 @@ func _on_recipe_picked_up() -> void:
 	update_inventory()
 
 func spawn_rat_near_player():
-	var rat_scene = preload("res://scenes/mouse.tscn")  # adjust path if needed
+	var rat_scene = preload("res://scenes/mouse.tscn")
 	var rat = rat_scene.instantiate()
-	var offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
-	rat.global_position = $Player.global_position 
+	rat.name = "Mouse_%s" % str(randi()) # assign unique name
+	rat.global_position = $Player.global_position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
 	add_child(rat)

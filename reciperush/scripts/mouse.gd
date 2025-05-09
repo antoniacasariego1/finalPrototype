@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-@export var speed := 80
+@export var speed := 70
 var target: Node = null
 
 func _ready():
 	input_pickable = true
+	add_to_group("mice")
 	target = get_closest_ingredient()
 	$CollisionShape2D.disabled = false
 	collision_mask = 0
@@ -27,12 +28,9 @@ func get_closest_ingredient():
 			closest = ing
 	return closest
 
-	
-
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		queue_free()
-
 
 func _on_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):

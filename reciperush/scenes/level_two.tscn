@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://cp2hsygbv30ou"]
+[gd_scene load_steps=53 format=4 uid="uid://cp2hsygbv30ou"]
 
 [ext_resource type="Script" path="res://scripts/level_two.gd" id="1_q6umb"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_qfj3s"]
@@ -5341,8 +5341,13 @@ sources/8 = SubResource("TileSetAtlasSource_sdimn")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okctn"]
 size = Vector2(38, 58)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smney"]
-size = Vector2(28, 46)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41wgh"]
+size = Vector2(128, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7q0e"]
+size = Vector2(33, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hswb1"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_q6umb")
@@ -5494,8 +5499,8 @@ position = Vector2(377, 116)
 script = ExtResource("23_g288a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_smney")
+position = Vector2(15, 11.5)
+shape = SubResource("RectangleShape2D_41wgh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stove"]
 texture = ExtResource("24_s813i")
@@ -5503,6 +5508,15 @@ texture = ExtResource("24_s813i")
 [node name="Timer" type="Timer" parent="Stove"]
 wait_time = 3.0
 one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stove"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StaticBody2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_s7q0e")
+
+[node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
+sprite_frames = SubResource("SpriteFrames_hswb1")
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
 [connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_picked_up"]

@@ -22,8 +22,8 @@ func start_cooking():
 		print("⏱ Timer started!")
 	else:
 		print("⚠️ Timer not found, changing scene manually.")
-		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_three.tscn")
 
 func _on_timer_timeout():
 	print("⏰ Timer finished. Changing scene to Level 2...")
-	get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_three.tscn")

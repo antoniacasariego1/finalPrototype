@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://hkwgy83hmb1v"]
+[gd_scene load_steps=55 format=4 uid="uid://hkwgy83hmb1v"]
 
 [ext_resource type="Script" path="res://scripts/level_one.gd" id="1_g0ku6"]
 [ext_resource type="PackedScene" uid="uid://c5n0e7nxcnna4" path="res://scenes/Player.tscn" id="1_puxdn"]
@@ -5348,6 +5348,8 @@ size = Vector2(128, 69)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ev78g"]
 size = Vector2(33, 50)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_adqhx"]
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_g0ku6")
 
@@ -5388,17 +5390,21 @@ position = Vector2(289, 531)
 
 [node name="onion" parent="." groups=["ingredients"] instance=ExtResource("14_fy6wr")]
 position = Vector2(206, 292)
+collision_layer = 1
 
 [node name="pepper" parent="." groups=["ingredients"] instance=ExtResource("14_fy6wr")]
 position = Vector2(734, 160)
+collision_layer = 1
 ingredient_name = "pepper"
 
 [node name="steak" parent="." groups=["ingredients"] instance=ExtResource("14_fy6wr")]
 position = Vector2(494, 335)
+collision_layer = 1
 ingredient_name = "steak"
 
 [node name="Player" parent="." instance=ExtResource("1_puxdn")]
 position = Vector2(283, 520)
+collision_mask = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -5500,6 +5506,9 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StaticBody2D"]
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_ev78g")
+
+[node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
+sprite_frames = SubResource("SpriteFrames_adqhx")
 
 [node name="WelcomeInstructions" type="NinePatchRect" parent="."]
 offset_right = 40.0
