@@ -7,14 +7,20 @@ var ingredients_collected: Array[String] = []
 var all_ingredients_collected = false
 
 func _ready():
-	# Hide inventory at first
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+	# Hide initial UI
 	$UI/InventoryPanel.visible = false
+	$WelcomeInstructions.visible = true
+	$StoveInstructions.visible = false
+
+	# Show welcome bubble for 4 seconds
+	await get_tree().create_timer(4.0).timeout
+	$WelcomeInstructions.visible = false
 
 	# Connect all ingredients in the group
 	for ingredient in get_tree().get_nodes_in_group("ingredients"):
 		ingredient.picked_up.connect(_on_ingredient_picked)
-
 
 # --- When an ingredient is picked up
 func _on_ingredient_picked(name: String):
@@ -36,7 +42,6 @@ func update_inventory():
 	if onion_icon: onion_icon.visible = "onion" in ingredients_collected
 	if pepper_icon: pepper_icon.visible = "pepper" in ingredients_collected
 
-
 # --- Check if player got all ingredients
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
@@ -44,6 +49,11 @@ func check_completion():
 		all_ingredients_collected = true
 		if $Stove:
 			$Stove.set_interactable(true)
+
+		# Show stove instructions
+		$StoveInstructions.visible = true
+		await get_tree().create_timer(4.0).timeout
+		$StoveInstructions.visible = false
 
 # --- Called by stove.gd after cooking finishes
 func on_cooking_finished():

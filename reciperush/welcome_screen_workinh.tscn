@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsco164ej2xd6"]
+[gd_scene load_steps=8 format=3 uid="uid://bsco164ej2xd6"]
 
-[ext_resource type="Script" path="res://welcome_screen.gd" id="1_wla3a"]
 [ext_resource type="Texture2D" uid="uid://d4gdvd777ppqn" path="res://assets/fonts/Screenshot 2025-04-21 at 10.48.20 PM.png" id="2_g8lpw"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="3_rhdk4"]
 [ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_o5sxi"]
@@ -14,7 +13,6 @@ size = Vector2(937.528, 194.002)
 size = Vector2(385, 96)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_wla3a")
 
 [node name="Screenshot2025-04-21At10_48_20Pm" type="Sprite2D" parent="."]
 position = Vector2(843, 290)
