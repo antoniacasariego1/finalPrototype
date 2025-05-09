@@ -25,7 +25,6 @@ func _on_body_entered(body: Node) -> void:
 		picked_up.emit(ingredient_name)
 		await get_tree().create_timer(0.2).timeout
 		queue_free()
-
 	elif body.name == "mouse" and can_be_stolen:
 		print(ingredient_name, "was stolen by a mouse!")
 		queue_free()
