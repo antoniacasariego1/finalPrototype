@@ -1,8 +1,10 @@
-[gd_scene load_steps=53 format=4 uid="uid://cp2hsygbv30ou"]
+[gd_scene load_steps=55 format=4 uid="uid://cp2hsygbv30ou"]
 
 [ext_resource type="Script" path="res://scripts/level_two.gd" id="1_q6umb"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_qfj3s"]
+[ext_resource type="Texture2D" uid="uid://xtge8q3we6m0" path="res://assets/Frame2.png" id="2_uqhr1"]
 [ext_resource type="Texture2D" uid="uid://b4jom3y4if5im" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_preview_32x32.png" id="3_7r02h"]
+[ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="3_up6lm"]
 [ext_resource type="Texture2D" uid="uid://c14sc866nse6u" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_preview_32x32.png" id="4_pehiy"]
 [ext_resource type="Texture2D" uid="uid://bdsiyhg4fh7yb" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_2_32x32.png" id="5_4r4wc"]
 [ext_resource type="Texture2D" uid="uid://ccc7dh44vkiuk" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_layer_2_32x32.png" id="6_ycav3"]
@@ -25,7 +27,7 @@
 [ext_resource type="Script" path="res://scripts/stove.gd" id="23_g288a"]
 [ext_resource type="Texture2D" uid="uid://7ogpyvsfvca8" path="res://assets/stove sprite.png" id="24_s813i"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpnyh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfk2g"]
 texture = ExtResource("2_qfj3s")
 texture_region_size = Vector2i(32, 32)
 2:11/0 = 0
@@ -187,7 +189,7 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mla32"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8w5w"]
 texture = ExtResource("3_7r02h")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
@@ -348,15 +350,15 @@ texture_region_size = Vector2i(32, 32)
 11:12/0 = 0
 12:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb487"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31uxt"]
 texture = ExtResource("4_pehiy")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3avm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3owc"]
 texture = ExtResource("5_4r4wc")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m83vb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d1gy"]
 texture = ExtResource("6_ycav3")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -416,7 +418,7 @@ texture_region_size = Vector2i(32, 32)
 5:9/0 = 0
 6:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1m0h8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fv3j"]
 texture = ExtResource("7_arnig")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -1148,7 +1150,7 @@ texture_region_size = Vector2i(32, 32)
 10:23/size_in_atlas = Vector2i(1, 3)
 10:23/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lry1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e234w"]
 texture = ExtResource("8_dlcj6")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -2270,13 +2272,13 @@ texture_region_size = Vector2i(32, 32)
 9:77/0 = 0
 10:77/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbhw5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aefpm"]
 texture = ExtResource("9_d5845")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(19, 13)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3exa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m2y4h"]
 texture = ExtResource("10_aeote")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
@@ -2567,15 +2569,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wpnyh")
-sources/1 = SubResource("TileSetAtlasSource_mla32")
-sources/5 = SubResource("TileSetAtlasSource_hbhw5")
-sources/6 = SubResource("TileSetAtlasSource_w3exa")
-sources/10 = SubResource("TileSetAtlasSource_xb487")
-sources/14 = SubResource("TileSetAtlasSource_e3avm")
-sources/15 = SubResource("TileSetAtlasSource_m83vb")
-sources/16 = SubResource("TileSetAtlasSource_1m0h8")
-sources/17 = SubResource("TileSetAtlasSource_2lry1")
+sources/0 = SubResource("TileSetAtlasSource_vfk2g")
+sources/1 = SubResource("TileSetAtlasSource_l8w5w")
+sources/5 = SubResource("TileSetAtlasSource_aefpm")
+sources/6 = SubResource("TileSetAtlasSource_m2y4h")
+sources/10 = SubResource("TileSetAtlasSource_31uxt")
+sources/14 = SubResource("TileSetAtlasSource_j3owc")
+sources/15 = SubResource("TileSetAtlasSource_7d1gy")
+sources/16 = SubResource("TileSetAtlasSource_8fv3j")
+sources/17 = SubResource("TileSetAtlasSource_e234w")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_us8cs"]
 texture = ExtResource("2_qfj3s")
@@ -5352,6 +5354,22 @@ size = Vector2(33, 50)
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_q6umb")
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+z_index = -1
+offset_right = 920.0
+offset_bottom = 760.0
+texture = ExtResource("2_uqhr1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 610.0
+offset_right = 383.0
+offset_bottom = 633.0
+theme_override_fonts/font = ExtResource("3_up6lm")
+text = "level 2"
+
 [node name="TileMapkitchen2" type="TileMap" parent="."]
 position = Vector2(519, 600)
 tile_set = SubResource("TileSet_2ao1i")
@@ -5385,7 +5403,7 @@ tile_map_data = PackedByteArray("AAD9/+//EAALAB4AAAD8/+//EAALAB4AAAD7/+//EAALAB4
 tile_set = SubResource("TileSet_do73w")
 
 [node name="Player" parent="." instance=ExtResource("12_f6ter")]
-position = Vector2(287, 553)
+position = Vector2(288, 515)
 
 [node name="recipe" parent="." instance=ExtResource("16_nn2nb")]
 position = Vector2(289, 531)

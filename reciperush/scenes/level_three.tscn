@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://bgfewe0kocpdx"]
+[gd_scene load_steps=38 format=4 uid="uid://bgfewe0kocpdx"]
 
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="1_5oeg8"]
+[ext_resource type="Texture2D" uid="uid://xtge8q3we6m0" path="res://assets/Frame2.png" id="1_yvwoy"]
 [ext_resource type="Texture2D" uid="uid://b4jom3y4if5im" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_preview_32x32.png" id="2_01b8w"]
 [ext_resource type="Texture2D" uid="uid://c14sc866nse6u" path="res://assets/moderninteriors-win/6_Home_Designs/Ice-Cream_Shop_Designs/32x32/Ice_Cream_Shop_Design_preview_32x32.png" id="3_t6qth"]
 [ext_resource type="Texture2D" uid="uid://bdsiyhg4fh7yb" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_2_32x32.png" id="4_vhtpy"]
@@ -10,8 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://bfye4my50erov" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_preview_32x32.png" id="8_l01mg"]
 [ext_resource type="Texture2D" uid="uid://rr3ayq4hln7y" path="res://assets/moderninteriors-win/6_Home_Designs/Japanese_Interiors_Home_Designs/32x32/Japanese_Home_1_Layer_1_32x32.png" id="9_bv732"]
 [ext_resource type="PackedScene" uid="uid://c5n0e7nxcnna4" path="res://scenes/Player.tscn" id="10_2kumh"]
+[ext_resource type="PackedScene" uid="uid://b6776vbbwb4lo" path="res://scenes/recipe.tscn" id="11_ohdl8"]
+[ext_resource type="PackedScene" uid="uid://bp0edyn4ksldc" path="res://scenes/ingredient.tscn" id="12_rpwho"]
+[ext_resource type="Texture2D" uid="uid://b00kxdx4kyyuh" path="res://assets/Food Icons/Separated Icons/corn.png" id="13_nnjhf"]
+[ext_resource type="Texture2D" uid="uid://ebq5d3c0d1t6" path="res://assets/Food Icons/Separated Icons/avocado.png" id="14_1lib6"]
+[ext_resource type="Texture2D" uid="uid://gj5uu3dm2bvx" path="res://assets/Food Icons/Separated Icons/egg.png" id="15_b4ylc"]
+[ext_resource type="Texture2D" uid="uid://c2mausvcpcsk1" path="res://assets/Food Icons/Separated Icons/chicken.png" id="16_pmd1i"]
+[ext_resource type="Texture2D" uid="uid://p2lhb40frett" path="res://assets/level2_recipe.png" id="17_762an"]
+[ext_resource type="AudioStream" uid="uid://huia4e0tq5bk" path="res://sounds/door_open.wav" id="17_pshwi"]
+[ext_resource type="AudioStream" uid="uid://f5rnw175p8ry" path="res://sounds/pick_recipe.mp3" id="18_hl4iw"]
+[ext_resource type="Script" path="res://scripts/stove.gd" id="19_2x1hr"]
+[ext_resource type="Texture2D" uid="uid://7ogpyvsfvca8" path="res://assets/stove sprite.png" id="20_i5vjn"]
+[ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="22_2p0sx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46wk3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bug8"]
 texture = ExtResource("1_5oeg8")
 texture_region_size = Vector2i(32, 32)
 2:11/0 = 0
@@ -173,7 +186,7 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se8mh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lymg"]
 texture = ExtResource("2_01b8w")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
@@ -334,15 +347,15 @@ texture_region_size = Vector2i(32, 32)
 11:12/0 = 0
 12:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_saqa8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g6n7"]
 texture = ExtResource("3_t6qth")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a7kn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq2vi"]
 texture = ExtResource("4_vhtpy")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtxdd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkyjx"]
 texture = ExtResource("5_pa0el")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -402,7 +415,7 @@ texture_region_size = Vector2i(32, 32)
 5:9/0 = 0
 6:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pswfv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k57xp"]
 texture = ExtResource("6_awmn8")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -1134,7 +1147,7 @@ texture_region_size = Vector2i(32, 32)
 10:23/size_in_atlas = Vector2i(1, 3)
 10:23/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i27br"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvx5m"]
 texture = ExtResource("7_uo3oi")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -2256,13 +2269,13 @@ texture_region_size = Vector2i(32, 32)
 9:77/0 = 0
 10:77/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ib38w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqd5k"]
 texture = ExtResource("8_l01mg")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(19, 13)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jalux"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ak6a"]
 texture = ExtResource("9_bv732")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
@@ -2549,25 +2562,55 @@ texture_region_size = Vector2i(32, 32)
 2:8/0 = 0
 1:8/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_odkws"]
+[sub_resource type="TileSet" id="TileSet_idv6s"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_46wk3")
-sources/1 = SubResource("TileSetAtlasSource_se8mh")
-sources/5 = SubResource("TileSetAtlasSource_ib38w")
-sources/6 = SubResource("TileSetAtlasSource_jalux")
-sources/10 = SubResource("TileSetAtlasSource_saqa8")
-sources/14 = SubResource("TileSetAtlasSource_2a7kn")
-sources/15 = SubResource("TileSetAtlasSource_wtxdd")
-sources/16 = SubResource("TileSetAtlasSource_pswfv")
-sources/17 = SubResource("TileSetAtlasSource_i27br")
+sources/0 = SubResource("TileSetAtlasSource_6bug8")
+sources/1 = SubResource("TileSetAtlasSource_1lymg")
+sources/5 = SubResource("TileSetAtlasSource_bqd5k")
+sources/6 = SubResource("TileSetAtlasSource_3ak6a")
+sources/10 = SubResource("TileSetAtlasSource_6g6n7")
+sources/14 = SubResource("TileSetAtlasSource_rq2vi")
+sources/15 = SubResource("TileSetAtlasSource_xkyjx")
+sources/16 = SubResource("TileSetAtlasSource_k57xp")
+sources/17 = SubResource("TileSetAtlasSource_pvx5m")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ippg"]
+size = Vector2(38, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcc4i"]
+size = Vector2(128, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vesd0"]
+size = Vector2(33, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sxaj"]
 
 [node name="LevelThree" type="Node2D"]
 
-[node name="TileMapkitchen" type="TileMap" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+z_index = -1
+offset_right = 920.0
+offset_bottom = 760.0
+texture = ExtResource("1_yvwoy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 610.0
+offset_right = 383.0
+offset_bottom = 633.0
+theme_override_fonts/font = ExtResource("22_2p0sx")
+text = "level 3"
+
+[node name="Player" parent="." instance=ExtResource("10_2kumh")]
+position = Vector2(282, 517)
+
+[node name="TileMapkitchen2" type="TileMap" parent="."]
 position = Vector2(519, 600)
-tile_set = SubResource("TileSet_odkws")
+tile_set = SubResource("TileSet_idv6s")
 format = 2
 layer_0/z_index = -1
 layer_0/tile_data = PackedInt32Array(-1048587, 6, 0, -1048586, 65542, 0, -1048585, 131078, 0, -1048584, 196614, 0, -1048583, 262150, 0, -1048582, 327686, 0, -1048581, 393222, 0, -1048580, 458758, 0, -1048579, 524294, 0, -1048578, 589830, 0, -1048577, 655366, 0, -1048576, 655366, 1, -983040, 655366, 2, -1114111, 786438, 0, -1114110, 851974, 0, -1114109, 917510, 0, -1114108, 983046, 0, -1114107, 1048582, 0, -1114106, 1114118, 0, -1114105, 1179654, 0, -1048569, 1179654, 1, -983033, 1179654, 2, -917497, 1179654, 3, -851961, 1179654, 4, -786425, 1179654, 5, -720889, 1179654, 6, -655353, 1179654, 7, -589817, 1179654, 8, -524281, 1179654, 9, -458745, 1179654, 10, -458746, 1114118, 10, -458747, 983046, 10, -458748, 983046, 10, -458749, 917510, 10, -458750, 851974, 10, -458751, 786438, 10, -458752, 720902, 10, -393217, 655366, 10, -393218, 589830, 10, -393219, 524294, 10, -983051, 6, 1, -917515, 6, 2, -851979, 6, 3, -786443, 6, 4, -720907, 6, 5, -655371, 6, 6, -589835, 6, 7, -524299, 6, 8, -458763, 6, 9, -393227, 6, 10, -393226, 65542, 10, -393225, 131078, 10, -393224, 196614, 10, -393223, 262150, 10, -393222, 327686, 10, -393221, 393222, 10, -393220, 458758, 11, -983050, 65542, 1, -983049, 65542, 1, -983047, 65542, 1, -983048, 65542, 1, -983046, 65542, 1, -983045, 65542, 1, -983044, 65542, 1, -983043, 65542, 1, -983042, 65542, 1, -983041, 65542, 1, -1048575, 786438, 1, -1048574, 786438, 1, -1048573, 786438, 1, -1048572, 786438, 1, -1048571, 786438, 1, -1048570, 786438, 1, -983034, 1114118, 2, -983035, 1048582, 2, -983036, 983046, 2, -983037, 917510, 2, -983038, 851974, 2, -983039, 786438, 2, -917505, 655366, 2, -917506, 589830, 2, -917507, 524294, 2, -917508, 458758, 2, -917509, 393222, 2, -917510, 327686, 2, -917511, 262150, 2, -917512, 196614, 2, -917513, 131078, 2, -917514, 65542, 2, -851978, 65542, 3, -851977, 131078, 3, -851976, 196614, 3, -851975, 262150, 3, -851974, 327686, 3, -851973, 393222, 3, -851972, 458758, 3, -851971, 524294, 3, -851970, 589830, 3, -851969, 655366, 3, -917504, 720902, 3, -786442, 65542, 4, -786441, 131078, 4, -786440, 196614, 4, -786439, 262150, 4, -786438, 327686, 4, -720902, 327686, 5, -720903, 262150, 5, -720904, 196614, 5, -720905, 131078, 5, -720906, 65542, 5, -327687, 262150, 11, -327686, 327686, 11, -327685, 393222, 11, -327684, 458758, 11, -327683, 524294, 11, -262147, 524294, 12, -327688, 196614, 11, -262152, 196614, 12, -262151, 262150, 12, -262149, 262150, 12, -262148, 262150, 12, -262150, 262150, 12, -655370, 65542, 6, -655369, 65542, 6, -589834, 65542, 7, -589833, 131078, 7, -524298, 65542, 8, -524297, 131078, 8, -458762, 65542, 9, -458761, 131078, 9, -458760, 196614, 9, -458759, 262150, 9, -458758, 327686, 9, -458756, 327686, 9, -458757, 393222, 9, -458755, 524294, 9, -458754, 589830, 9, -458753, 655366, 9, -524288, 720902, 9, -524287, 786438, 9, -589824, 851985, 41, -589823, 917521, 41, -589822, 983057, 41, -524286, 851974, 8, -589821, 917510, 8, -589820, 983057, 41, -524285, 917510, 9, -524284, 983046, 9, -589819, 1048582, 8, -524283, 1048582, 9, -589818, 1114118, 8, -524282, 1114118, 8, -655357, 786449, 40, -720893, 917510, 6, -720892, 983046, 6, -655355, 983046, 7, -655354, 983046, 7, -851967, 786438, 4, -786431, 786438, 4, -851966, 851974, 4, -786430, 851974, 5, -851965, 917510, 4, -851964, 983046, 4, -786428, 983046, 5, -851963, 1048582, 4, -786427, 1048582, 5, -851962, 1114118, 4, -917499, 1048582, 3, -917498, 1114118, 3, -917500, 983046, 3, -917501, 917510, 3, -917502, 917510, 3, -917503, 917510, 3, -786434, 917510, 3, -786436, 458758, 4, -786435, 524294, 4, -720900, 458758, 5, -720899, 524294, 5, -720898, 589830, 5, -786437, 393222, 4, -720901, 393222, 5, -655368, 196614, 6, -655367, 262150, 6, -655366, 327686, 6, -589832, 196614, 7, -524296, 196614, 8, -589831, 262150, 7, -589830, 327686, 7, -524295, 262150, 8, -524294, 327686, 8, -655365, 393222, 6, -589829, 393222, 7, -524293, 393222, 8, -589828, 458758, 7, -589827, 524294, 7, -589826, 720913, 40, -589825, 786449, 40, -655361, 655366, 6, -655362, 589830, 6, -655364, 458758, 6, -655363, 524294, 6, -524292, 458758, 8, -524291, 524294, 8, -524290, 720913, 41, -524289, 786449, 41, -786429, 917510, 5, -786426, 1114118, 5, -655356, 983057, 40, -720891, 1048582, 6, -720890, 1114118, 6, -851968, 786438, 4, -786433, 786438, 4, -720897, 917510, 8, -786432, 786438, 4, -720896, 851974, 4, -655360, 786449, 40, -720894, 917510, 4, -655358, 786449, 40, -720895, 1048582, 4, -655359, 786449, 40, -1114112, 655366, 0, -131075, 262150, 11, -131080, 262150, 11, -131079, 262150, 11, -131078, 262150, 11, -131077, 262150, 11, -131076, 262150, 11, -65544, 262150, 11, -8, 262150, 11, 65528, 262150, 11, 131064, 262150, 11, 131066, 262150, 11, 131065, 262150, 11, -7, 262150, 11, -65543, 262150, 11, 65529, 262150, 11, 65530, 262150, 11, -6, 262150, 11, -65542, 262150, 11, -65541, 262150, 11, -65540, 262150, 11, -65539, 262150, 11, -3, 262150, 11, -4, 262150, 11, -5, 262150, 11, 65531, 262150, 11, 65533, 262150, 11, 65532, 262150, 11, 131067, 262150, 11, 131068, 262150, 11, 131069, 262150, 11)
@@ -2578,24 +2621,156 @@ layer_2/name = "Top"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-1048579, 720912, 30, -1048580, 720912, 30, -1048581, 720912, 30, -1048582, 720912, 30, -524298, 524304, 8, -524297, 589840, 8, -524296, 655376, 11, -983046, 983056, 36, -917510, 983056, 37, -1048570, 589840, 33, -983034, 458768, 8, -983042, 16, 37, -1048576, 786448, 29, -1114112, 655376, 31, -1048578, 16, 36, -1048574, 16, 18, -1048575, 720912, 34, -983044, 917520, 35, -983043, 983056, 35, -1114109, 65552, 17, -1048573, 65552, 18, -1114110, 16, 17, -524295, 786448, 7, -589826, 16, 24, -589825, 65552, 24, -655359, 16, 22, -655358, 131088, 24, -720898, 655376, 34, -786428, 786448, 34, -655356, 524304, 46, -786432, 786448, 47)
 
-[node name="Layer1" type="TileMapLayer" parent="TileMapkitchen"]
+[node name="Layer1" type="TileMapLayer" parent="TileMapkitchen2"]
 z_index = -1
 use_parent_material = true
 tile_map_data = PackedByteArray("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AAAGAPf/BgARAAgAAAAGAPj/BgARAAgAAAADAPb/BgAOAAcAAAADAPX/BgAOAAYAAAAEAPX/BgAPAAYAAAAFAPb/BgAPAAcAAAAGAPb/BgAPAAcAAAABAPP/BgAMAAQAAAABAPT/BgAMAAQAAAACAPP/BgANAAQAAAACAPT/BgANAAUAAAADAPP/BgAOAAQAAAAEAPP/BgAPAAQAAAAEAPT/BgAPAAUAAAAFAPP/BgAQAAQAAAAFAPT/BgAQAAUAAAAGAPP/BgARAAQAAAAFAPL/BgAQAAMAAAAGAPL/BgARAAMAAAAEAPL/BgAPAAMAAAADAPL/BgAOAAMAAAACAPL/BgAOAAMAAAABAPL/BgAOAAMAAAD+//P/BgAOAAMAAAD8//P/BgAHAAQAAAD9//P/BgAIAAQAAAD8//T/BgAHAAUAAAD9//T/BgAIAAUAAAD+//T/BgAJAAUAAAD7//P/BgAGAAQAAAD7//T/BgAGAAUAAAD4//X/BgADAAYAAAD5//X/BgAEAAYAAAD6//X/BgAFAAYAAAD4//b/BgADAAcAAAD4//f/BgADAAgAAAD5//b/BgAEAAcAAAD6//b/BgAFAAcAAAD6//f/BgAFAAgAAAD7//X/BgAGAAYAAAD7//b/BgAGAAcAAAD7//f/BgAGAAgAAAD8//b/BgAHAAcAAAD9//b/BgAIAAcAAAD+//b/BgAJAAcAAAD///b/BgAKAAcAAAD///X/BgAKAAYAAAD+//X/BgAJAAYAAAD8//X/BgAHAAYAAAD9//X/BgAIAAYAAAD8//f/BgAHAAgAAAD9//f/BgAIAAgAAAD+//f/BgAJAAgAAAD///f/BgAKAAgAAAADAPT/BgAOAAUAAAAGAPT/BgARAAUAAAAEAPb/BgAPAAcAAAAFAPX/BgAQAAYAAAAGAPX/BgARAAYAAAAAAPP/BgAMAAQAAAD///P/BgAMAAQAAAD///T/BgAOAAgAAAAAAPT/BgAMAAQAAAAAAPX/BgANAAQAAAAAAPb/BgANAAUAAAACAPX/BgAOAAQAAAACAPb/BgAOAAUAAAABAPX/BgAQAAQAAAABAPb/BgAQAAUAAAAAAO//BgAKAAAAAAD4//z/BgADAAwAAAD9//z/BgAIAAwAAAD5//z/BgAEAAwAAAD6//z/BgAFAAwAAAD7//z/BgAFAAwAAAD8//z/BgAHAAwAAAD5//f/BgAEAAgAAAA=")
-tile_set = SubResource("TileSet_odkws")
+tile_set = SubResource("TileSet_idv6s")
 
-[node name="Base3" type="TileMapLayer" parent="TileMapkitchen"]
+[node name="Base3" type="TileMapLayer" parent="TileMapkitchen2"]
 z_index = -1
 use_parent_material = true
 position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAD2//D/EAAJABcAAAD3//D/EAAKABcAAAD4//D/EAALABcAAAD5//D/EAAMABcAAAD6//D/EAAIAAsAAAD6//H/EAAIAAwAAAD7//D/EAAIAA0AAAD7//H/EAAIAA4AAAD8//D/EAAIAAsAAAD8//H/EAAIAAwAAAD9//D/EAAJAAsAAAD9//H/EAAJAAwAAAABAPD/EAAKACQAAAABAPH/EQANACkAAAACAPD/EAALACQAAAACAPH/EQAOACkAAAADAPD/EQAPACgAAAADAPH/EQAPACkAAAD9//X/BgAIAAYAAAD2//T/EQALACIAAAD2//X/EQALACMAAAD3//P/EQAMACIAAAD4//P/EQANACIAAAD3//T/EQAMACMAAAD4//T/EQANACMAAAD3//X/EQAMACQAAAD4//X/EQANACQAAAD5//T/EQAOACIAAAD5//X/EQAOACMAAAAFAO//EQAKACMAAAAEAO//EQAJACMAAAAEAPD/EQAJACQAAAAEAPH/EQAJACUAAAAFAPD/EQAKACQAAAAFAPH/EQAKACUAAAD+//f/EQAHACYAAAD///f/EQAMACkAAAAAAPf/EQANACkAAAABAPf/EQAOACkAAAACAPf/EQAOACkAAAADAPf/EQAOACkAAAAEAPf/EQAPACkAAAD+//b/EQALACgAAAD///b/EQAMACgAAAAAAPb/EQANACgAAAABAPb/EQAOACgAAAACAPb/EQAOACgAAAADAPb/EQAOACgAAAAEAPb/EQAPACgAAAD+//X/EQALACkAAAD///X/EQAMACkAAAAAAPX/EQANACkAAAABAPX/EQAOACkAAAACAPX/EQAPACkAAAADAPX/EQAOACkAAAAEAPX/EQAMACkAAAD+//T/EQALACgAAAD///T/EQAMACgAAAAAAPT/EQANACgAAAABAPT/EQAOACgAAAACAPT/EQAPACgAAAADAPT/EQAOACgAAAAEAPT/EQAMACgAAAD2//f/EAAKAAcAAAD2//j/EAAKAAgAAAD3//f/EAALAAcAAAD3//j/EAALAAgAAAD4//f/EAALAAcAAAD4//j/EAALAAgAAAD//+//EAALAA0AAAD+//D/EQANACgAAAD+//H/EQANACkAAAD///D/EAAJACAAAAD///H/EQAOACkAAAAAAPD/EQAPACgAAAAAAPH/EQAPACkAAAD5//f/EAALAAcAAAD5//j/EAALAAgAAAD6//r/AAAGAAkAAAD5//r/AAAFAAkAAAD+//j/EQAHACcAAAD6//n/AAAIAAgAAAD5//n/AAAIAAgAAAA=")
-tile_set = SubResource("TileSet_odkws")
+tile_map_data = PackedByteArray("AAD2//D/EAAJABcAAAD3//D/EAAKABcAAAD4//D/EAALABcAAAD5//D/EAAMABcAAAABAPD/EAAKACQAAAABAPH/EQANACkAAAACAPD/EAALACQAAAACAPH/EQAOACkAAAADAPD/EQAPACgAAAADAPH/EQAPACkAAAD9//X/BgAIAAYAAAD2//T/EQALACIAAAD2//X/EQALACMAAAD3//P/EQAMACIAAAD4//P/EQANACIAAAD3//T/EQAMACMAAAD4//T/EQANACMAAAD3//X/EQAMACQAAAD4//X/EQANACQAAAD5//T/EQAOACIAAAD5//X/EQAOACMAAAAFAO//EQAKACMAAAAEAO//EQAJACMAAAAEAPD/EQAJACQAAAAEAPH/EQAJACUAAAAFAPD/EQAKACQAAAAFAPH/EQAKACUAAAD+//f/EQAHACYAAAD///f/EQAMACkAAAAAAPf/EQANACkAAAABAPf/EQAOACkAAAACAPf/EQAOACkAAAADAPf/EQAOACkAAAAEAPf/EQAPACkAAAD+//b/EQALACgAAAD///b/EQAMACgAAAAAAPb/EQANACgAAAABAPb/EQAOACgAAAACAPb/EQAOACgAAAADAPb/EQAOACgAAAAEAPb/EQAPACgAAAD+//X/EQALACkAAAD///X/EQAMACkAAAAAAPX/EQANACkAAAABAPX/EQAOACkAAAACAPX/EQAPACkAAAADAPX/EQAOACkAAAAEAPX/EQAMACkAAAD+//T/EQALACgAAAD///T/EQAMACgAAAAAAPT/EQANACgAAAABAPT/EQAOACgAAAACAPT/EQAPACgAAAADAPT/EQAOACgAAAAEAPT/EQAMACgAAAD2//f/EAAKAAcAAAD2//j/EAAKAAgAAAD3//f/EAALAAcAAAD3//j/EAALAAgAAAD4//f/EAALAAcAAAD4//j/EAALAAgAAAD//+//EAALAA0AAAD+//D/EQANACgAAAD+//H/EQANACkAAAD///D/EAAJACAAAAD///H/EQAOACkAAAAAAPD/EQAPACgAAAAAAPH/EQAPACkAAAD5//f/EAALAAcAAAD5//j/EAALAAgAAAD6//r/AAAGAAkAAAD5//r/AAAFAAkAAAD+//j/EQAHACcAAAD6//n/AAAIAAgAAAD5//n/AAAIAAgAAAD9//H/EAAJAAwAAAD9//D/EAAJAAsAAAD6//D/EAAIAAsAAAD6//H/EAAIAAwAAAD8//H/EAAIAAwAAAD8//D/EAAIAAsAAAA=")
+tile_set = SubResource("TileSet_idv6s")
 
-[node name="Top2" type="TileMapLayer" parent="TileMapkitchen"]
+[node name="Top2" type="TileMapLayer" parent="TileMapkitchen2"]
 z_index = -1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD9/+//EAALAB4AAAD8/+//EAALAB4AAAD7/+//EAALAB4AAAD6/+//EAALAB4AAAD2//f/EAAIAAgAAAD4//f/EAAKAAsAAAD6//D/EAAPACQAAAD6//H/EAAPACUAAAAGAPD/EAAJACEAAAAGAPH/EAAHAAgAAAD+//D/EAAAACUAAAAAAPD/EAAMAB0AAAAAAO//EAAKAB8AAAD+/+//EAAAACQAAAACAPD/EAAAABIAAAABAPD/EAALACIAAAD8//D/EAAOACMAAAD9//D/EAAPACMAAAADAO//EAABABEAAAADAPD/EAABABIAAAACAO//EAAAABEAAAD5//f/EAAMAAcAAAD+//b/EAAAABgAAAD///b/EAABABgAAAABAPb/EAAAABYAAAACAPb/EAACABgAAAD+//T/EAAKACIAAAAEAPT/EAAMACIAAAAEAPb/EAAIAC4AAAAAAPT/EAAMAC8AAAD7//n/CAAIAAAAAAD8//n/AAAIAAgAAAD8//r/AAAIAAkAAAD7//r/CAAIAAEAAAD6//r/AwAHAAEAAAD5//r/AwAGAAEAAAD6//v/CAAHAAIAAAD5//v/CAAGAAIAAAD+//f/EQALACkAAAD3//f/EAAJAAgAAAD6//n/AwAHAAAAAAD5//n/AwAGAAAAAAA=")
-tile_set = SubResource("TileSet_odkws")
+tile_map_data = PackedByteArray("AAD9/+//EAALAB4AAAD8/+//EAALAB4AAAD7/+//EAALAB4AAAD6/+//EAALAB4AAAD2//f/EAAIAAgAAAD4//f/EAAKAAsAAAAGAPD/EAAJACEAAAAGAPH/EAAHAAgAAAD+//D/EAAAACUAAAAAAPD/EAAMAB0AAAAAAO//EAAKAB8AAAD+/+//EAAAACQAAAACAPD/EAAAABIAAAABAPD/EAALACIAAAADAO//EAABABEAAAADAPD/EAABABIAAAACAO//EAAAABEAAAD5//f/EAAMAAcAAAD+//b/EAAAABgAAAD///b/EAABABgAAAABAPb/EAAAABYAAAACAPb/EAACABgAAAD+//T/EAAKACIAAAAEAPT/EAAMACIAAAAEAPb/EAAIAC4AAAAAAPT/EAAMAC8AAAD7//n/CAAIAAAAAAD8//n/AAAIAAgAAAD8//r/AAAIAAkAAAD7//r/CAAIAAEAAAD6//r/AwAHAAEAAAD5//r/AwAGAAEAAAD6//v/CAAHAAIAAAD5//v/CAAGAAIAAAD+//f/EQALACkAAAD3//f/EAAJAAgAAAD6//n/AwAHAAAAAAD5//n/AwAGAAAAAAD9//D/EAAPACMAAAD6//H/EAAPACUAAAD6//D/EAAPACQAAAA=")
+tile_set = SubResource("TileSet_idv6s")
 
-[node name="Player" parent="." instance=ExtResource("10_2kumh")]
-position = Vector2(280, 560)
+[node name="recipe" parent="." instance=ExtResource("11_ohdl8")]
+position = Vector2(289, 531)
+
+[node name="corn" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
+position = Vector2(277, 166)
+ingredient_name = "corn"
+
+[node name="avocado" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
+position = Vector2(734, 160)
+ingredient_name = "avocado"
+
+[node name="egg" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
+position = Vector2(679, 277)
+ingredient_name = "egg"
+
+[node name="chicken" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
+position = Vector2(331, 252)
+ingredient_name = "chicken"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryPanel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.108
+anchor_right = 0.367
+anchor_bottom = 0.195
+offset_left = 0.119995
+offset_top = -0.120003
+offset_right = -0.344025
+offset_bottom = 0.199997
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/InventoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.02
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.1344
+offset_right = -0.720001
+offset_bottom = -0.29599
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CornIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("13_nnjhf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AvocadoIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("14_1lib6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EggIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("15_b4ylc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ChickenIcon" type="TextureRect" parent="UI/InventoryPanel/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("16_pmd1i")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RecipeTrack" type="TextureRect" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(-3, -3)
+anchors_preset = -1
+anchor_left = 0.151
+anchor_top = 0.18
+anchor_right = 0.28
+anchor_bottom = 0.375
+offset_left = 11.368
+offset_top = -2.2
+offset_right = 11.04
+offset_bottom = -2.00002
+texture = ExtResource("17_762an")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="KitchenDoor" type="StaticBody2D" parent="."]
+position = Vector2(373, 411)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_8ippg")
+
+[node name="DoorOpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_pshwi")
+
+[node name="RecipePickUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_hl4iw")
+
+[node name="Stove" type="Area2D" parent="."]
+position = Vector2(377, 116)
+script = ExtResource("19_2x1hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
+position = Vector2(15, 11.5)
+shape = SubResource("RectangleShape2D_tcc4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stove"]
+texture = ExtResource("20_i5vjn")
+
+[node name="Timer" type="Timer" parent="Stove"]
+wait_time = 3.0
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stove"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StaticBody2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_vesd0")
+
+[node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
+sprite_frames = SubResource("SpriteFrames_7sxaj")
+
+[connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
+[connection signal="body_entered" from="Stove" to="Stove" method="_on_body_entered"]
+[connection signal="timeout" from="Stove/Timer" to="Stove" method="_on_timer_timeout"]
