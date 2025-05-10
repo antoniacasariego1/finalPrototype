@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cp2hsygbv30ou"]
+[gd_scene load_steps=56 format=4 uid="uid://cp2hsygbv30ou"]
 
 [ext_resource type="Script" path="res://scripts/level_two.gd" id="1_q6umb"]
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="2_qfj3s"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://f5rnw175p8ry" path="res://sounds/pick_recipe.mp3" id="22_mto3n"]
 [ext_resource type="Script" path="res://scripts/stove.gd" id="23_g288a"]
 [ext_resource type="Texture2D" uid="uid://7ogpyvsfvca8" path="res://assets/stove sprite.png" id="24_s813i"]
+[ext_resource type="Texture2D" uid="uid://bawolqoe1d01" path="res://assets/Bubbles.png" id="25_l5kac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfk2g"]
 texture = ExtResource("2_qfj3s")
@@ -5358,8 +5359,10 @@ script = ExtResource("1_q6umb")
 
 [node name="TextureRect" type="TextureRect" parent="Node2D"]
 z_index = -1
-offset_right = 920.0
-offset_bottom = 760.0
+offset_left = -9.0
+offset_top = 8.0
+offset_right = 911.0
+offset_bottom = 768.0
 texture = ExtResource("2_uqhr1")
 
 [node name="Label" type="Label" parent="."]
@@ -5535,6 +5538,43 @@ shape = SubResource("RectangleShape2D_s7q0e")
 
 [node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
 sprite_frames = SubResource("SpriteFrames_hswb1")
+
+[node name="RatInstructions" type="NinePatchRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RatInstructions"]
+position = Vector2(418, 529)
+scale = Vector2(0.567779, 0.444099)
+texture = ExtResource("25_l5kac")
+
+[node name="Label" type="Label" parent="RatInstructions"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 491.0
+offset_right = 466.0
+offset_bottom = 554.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_up6lm")
+theme_override_font_sizes/font_size = 8
+text = "The rats are after 
+your ingredients! 
+Click them before they 
+reach the food or 
+you'll have to restart 
+the level!"
+
+[node name="Textbox" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Textbox"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 660.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_up6lm")
+text = "Watch out! Rats are trying to steal your ingredients!"
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
 [connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_picked_up"]
