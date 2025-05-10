@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsc677tahypqu"]
+[gd_scene load_steps=9 format=3 uid="uid://bsc677tahypqu"]
 
 [ext_resource type="Texture2D" uid="uid://d4gdvd777ppqn" path="res://assets/fonts/Screenshot 2025-04-21 at 10.48.20 PM.png" id="1_c2a7c"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="2_j2h0e"]
 [ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fea7f"]
 [ext_resource type="Texture2D" uid="uid://cblwnblq5twlw" path="res://assets/STARTButtons.png" id="4_rf2cx"]
+[ext_resource type="Script" path="res://scenes/area_2d.gd" id="5_p177y"]
 [ext_resource type="Texture2D" uid="uid://ddk0n6m6hgdpv" path="res://assets/HOWTOButtons.png" id="6_8pqan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b1yr"]
+size = Vector2(976.056, 215.513)
+
+[sub_resource type="GDScript" id="GDScript_dxirc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -45,7 +51,16 @@ position = Vector2(820, 443)
 scale = Vector2(0.389447, 0.390411)
 texture = ExtResource("4_rf2cx")
 
-[node name="HowtoButtons" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_p177y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(823, 543.239)
+scale = Vector2(0.389322, 0.382706)
+shape = SubResource("RectangleShape2D_1b1yr")
+
+[node name="HowtoButtons" type="Sprite2D" parent="Area2D"]
 position = Vector2(820, 545)
 scale = Vector2(0.389322, 0.382706)
 texture = ExtResource("6_8pqan")
+script = SubResource("GDScript_dxirc")
