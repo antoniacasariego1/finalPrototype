@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy0wxk3nsyijb"]
+[gd_scene load_steps=17 format=3 uid="uid://b7i7guc6fuc3m"]
 
 [ext_resource type="Script" path="res://scripts/rival_chef.gd" id="1_ack84"]
 [ext_resource type="Texture2D" uid="uid://cvnmfhqlwil0i" path="res://sprites/Chef B1.png" id="2_gihut"]
