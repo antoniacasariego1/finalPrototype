@@ -8,6 +8,8 @@ func _ready():
 		$Sprite2D.texture = preload("res://assets/recipe.png")
 	elif scene_path.find("level_two") != -1:
 		$Sprite2D.texture = preload("res://assets/level2_recipe.png")
+	elif scene_path.find("level_three") != -1:
+		$Sprite2D.texture = preload("res://assets/level3_recipe.png")
 		
 func _on_body_entered(body: Node):
 	print("something touched me:", body.name)

@@ -23,15 +23,15 @@ func _on_ingredient_picked(name: String):
 		check_completion()
 
 func update_inventory():
-	var corn_icon = $UI/InventoryPanel/HBoxContainer/CornIcon
-	var avocado_icon = $UI/InventoryPanel/HBoxContainer/AvocadoIcon
-	var egg_icon = $UI/InventoryPanel/HBoxContainer/EggIcon
-	var chicken_icon = $UI/InventoryPanel/HBoxContainer/ChickenIcon
+	var potato_icon = $UI/InventoryPanel/HBoxContainer/PotatoIcon
+	var cheese_icon = $UI/InventoryPanel/HBoxContainer/CheeseIcon
+	var pumpkin_icon = $UI/InventoryPanel/HBoxContainer/PumpkinIcon
+	var tomato_soup_icon = $UI/InventoryPanel/HBoxContainer/TomatoSoupIcon
 
-	if corn_icon: corn_icon.visible = "corn" in ingredients_collected
-	if avocado_icon: avocado_icon.visible = "avocado" in ingredients_collected
-	if egg_icon: egg_icon.visible = "egg" in ingredients_collected
-	if chicken_icon: chicken_icon.visible = "chicken" in ingredients_collected
+	if potato_icon: potato_icon.visible = "potato" in ingredients_collected
+	if cheese_icon: cheese_icon.visible = "cheese" in ingredients_collected
+	if pumpkin_icon: pumpkin_icon.visible = "pumpkin" in ingredients_collected
+	if tomato_soup_icon: tomato_soup_icon.visible = "tomato_soup" in ingredients_collected
 
 func rival_chef_took(name: String):
 	if name in ingredients_needed and name not in ingredients_collected:
@@ -64,7 +64,7 @@ func _on_recipe_recipe_recipe_picked_up() -> void:
 	$DoorOpenSound.play()
 	print("Recipe picked up!")
 	recipe_active = true
-	ingredients_needed = ["corn", "avocado", "egg", "chicken"]
+	ingredients_needed = ["potato", "cheese", "pumpkin", "tomato_soup"]
 	$UI/InventoryPanel.visible = true
 	$UI/RecipeTrack.visible = true
 	update_inventory()

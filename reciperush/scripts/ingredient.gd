@@ -11,7 +11,11 @@ var ingredient_textures := {
 	"corn": preload("res://assets/Food Icons/Separated Icons/corn.png"),
 	"avocado": preload("res://assets/Food Icons/Separated Icons/avocado.png"),
 	"egg": preload("res://assets/Food Icons/Separated Icons/egg.png"),
-	"chicken": preload("res://assets/Food Icons/Separated Icons/chicken.png")
+	"chicken": preload("res://assets/Food Icons/Separated Icons/chicken.png"), 
+	"potato": preload("res://assets/Food Icons/Separated Icons/potato.png"),
+	"cheese": preload("res://assets/Food Icons/Separated Icons/cheese.png"),
+	"pumpkin": preload("res://assets/Food Icons/Separated Icons/pumpkin.png"),
+	"tomato_soup": preload("res://assets/Food Icons/Separated Icons/tomatosoup.png")
 }
 
 func _ready() -> void:
