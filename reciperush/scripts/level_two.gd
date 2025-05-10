@@ -54,7 +54,7 @@ func check_completion():
 # --- Called by stove.gd after cooking finishes
 func on_cooking_finished():
 	print("Cooking complete! Moving to Level 2...")
-	get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_three.tscn")
 
 func _on_recipe_picked_up() -> void:
 	$RecipePickUp.play()

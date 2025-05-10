@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://bgfewe0kocpdx"]
+[gd_scene load_steps=55 format=4 uid="uid://bgfewe0kocpdx"]
 
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="1_5oeg8"]
 [ext_resource type="Script" path="res://scripts/level_three.gd" id="1_gcwk2"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://bkmqrkcxyucek" path="res://assets/Food Icons/Separated Icons/tomatosoup.png" id="21_tnl3p"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="22_2p0sx"]
 [ext_resource type="Texture2D" uid="uid://ck4n7m6yh3i1w" path="res://assets/level3_recipe.png" id="22_pbdvv"]
-[ext_resource type="PackedScene" uid="uid://dy0wxk3nsyijb" path="res://scenes/rival_chef.tscn" id="25_oacy3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bug8"]
 texture = ExtResource("1_5oeg8")
@@ -5558,8 +5557,6 @@ shape = SubResource("RectangleShape2D_vesd0")
 
 [node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
 sprite_frames = SubResource("SpriteFrames_7sxaj")
-
-[node name="Rival Chef" parent="." instance=ExtResource("25_oacy3")]
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
 [connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_recipe_recipe_picked_up"]

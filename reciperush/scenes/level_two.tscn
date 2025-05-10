@@ -5420,7 +5420,7 @@ position = Vector2(734, 160)
 ingredient_name = "avocado"
 
 [node name="egg" parent="." groups=["ingredients"] instance=ExtResource("11_vo3iu")]
-position = Vector2(679, 277)
+position = Vector2(648, 350)
 ingredient_name = "egg"
 
 [node name="chicken" parent="." groups=["ingredients"] instance=ExtResource("11_vo3iu")]

@@ -6,7 +6,6 @@ var ingredients_collected: Array[String] = []
 var all_ingredients_collected = false
 
 func _ready():
-	spawn_rival_chef()
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	$UI/InventoryPanel.visible = false
 
@@ -21,6 +20,10 @@ func _on_ingredient_picked(name: String):
 		ingredients_collected.append(name)
 		update_inventory()
 		check_completion()
+		
+	if ingredients_collected.size() >= 1:
+		spawn_rat_near_player()
+		spawn_rat_near_player()
 
 func update_inventory():
 	var potato_icon = $UI/InventoryPanel/HBoxContainer/PotatoIcon
@@ -33,11 +36,6 @@ func update_inventory():
 	if pumpkin_icon: pumpkin_icon.visible = "pumpkin" in ingredients_collected
 	if tomato_soup_icon: tomato_soup_icon.visible = "tomato_soup" in ingredients_collected
 
-func rival_chef_took(name: String):
-	if name in ingredients_needed and name not in ingredients_collected:
-		print("Rival chef took", name)
-		ingredients_needed.erase(name)
-		check_completion()
 
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
@@ -48,13 +46,8 @@ func check_completion():
 
 func on_cooking_finished():
 	print("Cooking complete! Moving to Win Screen...")
-	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/win.tscn")
 
-func spawn_rival_chef():
-	var rival_scene = preload("res://scenes/rival_chef.tscn")
-	var rival = rival_scene.instantiate()
-	rival.global_position = $Player.global_position + Vector2(40, 40)
-	add_child(rival)
 
 
 func _on_recipe_recipe_recipe_picked_up() -> void:
@@ -68,3 +61,10 @@ func _on_recipe_recipe_recipe_picked_up() -> void:
 	$UI/InventoryPanel.visible = true
 	$UI/RecipeTrack.visible = true
 	update_inventory()
+
+func spawn_rat_near_player():
+	var rat_scene = preload("res://scenes/mouse.tscn")  # adjust path if needed
+	var rat = rat_scene.instantiate()
+	var offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
+	rat.global_position = $Player.global_position 
+	add_child(rat)

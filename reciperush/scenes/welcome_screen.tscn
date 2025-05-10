@@ -4,8 +4,16 @@
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="2_j2h0e"]
 [ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fea7f"]
 [ext_resource type="Texture2D" uid="uid://cblwnblq5twlw" path="res://assets/STARTButtons.png" id="4_rf2cx"]
-[ext_resource type="Script" path="res://scenes/area_2d.gd" id="5_p177y"]
 [ext_resource type="Texture2D" uid="uid://ddk0n6m6hgdpv" path="res://assets/HOWTOButtons.png" id="6_8pqan"]
+
+[sub_resource type="GDScript" id="GDScript_0kxqf"]
+script/source = "extends Area2D
+
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		print(\"Back button clicked!\")
+		get_tree().change_scene_to_file(\"res://scenes/how_to.tscn\")  # Adjust the path!
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b1yr"]
 size = Vector2(976.056, 215.513)
@@ -14,12 +22,12 @@ size = Vector2(976.056, 215.513)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Screenshot2025-04-21At10_48_20Pm" type="Sprite2D" parent="."]
+[node name="welcome" type="Sprite2D" parent="."]
 position = Vector2(843, 290)
 scale = Vector2(0.879392, 0.939408)
 texture = ExtResource("1_c2a7c")
 
-[node name="Welcome" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+[node name="Welcome" type="Label" parent="welcome"]
 offset_left = -262.454
 offset_top = -214.578
 offset_right = 437.546
@@ -28,7 +36,7 @@ theme_override_fonts/font = ExtResource("2_j2h0e")
 theme_override_font_sizes/font_size = 60
 text = "Welcome"
 
-[node name="Welcome2" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+[node name="Welcome2" type="Label" parent="welcome"]
 offset_left = -125.286
 offset_top = -131.354
 offset_right = 574.714
@@ -37,7 +45,7 @@ theme_override_fonts/font = ExtResource("2_j2h0e")
 theme_override_font_sizes/font_size = 50
 text = "to"
 
-[node name="Welcome3" type="Label" parent="Screenshot2025-04-21At10_48_20Pm"]
+[node name="Welcome3" type="Label" parent="welcome"]
 offset_left = -387.74
 offset_top = -31.0837
 offset_right = 432.26
@@ -52,7 +60,7 @@ scale = Vector2(0.389447, 0.390411)
 texture = ExtResource("4_rf2cx")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("5_p177y")
+script = SubResource("GDScript_0kxqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(823, 543.239)
