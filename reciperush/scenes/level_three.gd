@@ -35,35 +35,36 @@ func update_inventory():
 
 func rival_chef_took(name: String):
 	if name in ingredients_needed and name not in ingredients_collected:
-		print("❌ Rival chef took", name)
+		print("Rival chef took", name)
 		ingredients_needed.erase(name)
 		check_completion()
 
 func check_completion():
 	if ingredients_collected.size() == ingredients_needed.size():
-		print("✅ All ingredients collected! Go to the stove.")
+		print("All ingredients collected! Go to the stove.")
 		all_ingredients_collected = true
 		if $Stove:
 			$Stove.set_interactable(true)
 
 func on_cooking_finished():
-	print("🍳 Cooking complete! Moving to Win Screen...")
+	print("Cooking complete! Moving to Win Screen...")
 	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
-
-func _on_recipe_picked_up():
-	$RecipePickUp.play()
-	if $KitchenDoor:
-		$KitchenDoor.queue_free()
-	$DoorOpenSound.play()
-	print("📜 Recipe picked up!")
-	recipe_active = true
-	ingredients_needed = ["corn", "avocado", "egg", "chicken"]
-	$UI/InventoryPanel.visible = true
-	$UI/RecipeTrack.visible = true
-	update_inventory()
 
 func spawn_rival_chef():
 	var rival_scene = preload("res://scenes/rival_chef.tscn")
 	var rival = rival_scene.instantiate()
 	rival.global_position = $Player.global_position + Vector2(40, 40)
 	add_child(rival)
+
+
+func _on_recipe_recipe_recipe_picked_up() -> void:
+	$RecipePickUp.play()
+	if $KitchenDoor:
+		$KitchenDoor.queue_free()
+	$DoorOpenSound.play()
+	print("Recipe picked up!")
+	recipe_active = true
+	ingredients_needed = ["corn", "avocado", "egg", "chicken"]
+	$UI/InventoryPanel.visible = true
+	$UI/RecipeTrack.visible = true
+	update_inventory()
