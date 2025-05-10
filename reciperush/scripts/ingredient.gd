@@ -36,4 +36,8 @@ func _on_body_entered(body: Node) -> void:
 	elif body.name == "mouse" and can_be_stolen:
 		print(ingredient_name, "was stolen by a mouse!")
 		queue_free()
-		get_tree().reload_current_scene()
+		var scene_path = get_tree().current_scene.scene_file_path
+		if scene_path.find("level_three") != -1:
+			get_tree().change_scene_to_file("res://scenes/lost.tscn")
+		else: 
+			get_tree().reload_current_scene()

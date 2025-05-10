@@ -21,6 +21,7 @@ theme_override_font_sizes/font_size = 69
 text = "You won!"
 
 [node name="you\'ve done" type="Label" parent="You won"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 242.0
 offset_right = 862.0
@@ -32,6 +33,7 @@ three recipes and
 killed all the rats..."
 
 [node name="promoted" type="Label" parent="You won"]
+layout_mode = 0
 offset_left = 350.0
 offset_top = 344.0
 offset_right = 875.0

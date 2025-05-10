@@ -8,6 +8,10 @@ var all_ingredients_collected = false
 func _ready():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	$UI/InventoryPanel.visible = false
+	
+	$RatInstructions.visible = true
+	await get_tree().create_timer(4.0).timeout
+	$RatInstructions.visible = false
 
 	for ingredient in get_tree().get_nodes_in_group("ingredients"):
 		ingredient.picked_up.connect(_on_ingredient_picked)
@@ -22,7 +26,6 @@ func _on_ingredient_picked(name: String):
 		check_completion()
 		
 	if ingredients_collected.size() >= 1:
-		spawn_rat_near_player()
 		spawn_rat_near_player()
 
 func update_inventory():

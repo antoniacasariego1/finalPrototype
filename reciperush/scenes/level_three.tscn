@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bgfewe0kocpdx"]
+[gd_scene load_steps=56 format=4 uid="uid://bgfewe0kocpdx"]
 
 [ext_resource type="Texture2D" uid="uid://nylornl44xfd" path="res://assets/moderninteriors-win/6_Home_Designs/Generic_Home_Designs/32x32/Generic_Home_1_Layer_1_32x32.png" id="1_5oeg8"]
 [ext_resource type="Script" path="res://scripts/level_three.gd" id="1_gcwk2"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bkmqrkcxyucek" path="res://assets/Food Icons/Separated Icons/tomatosoup.png" id="21_tnl3p"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="22_2p0sx"]
 [ext_resource type="Texture2D" uid="uid://ck4n7m6yh3i1w" path="res://assets/level3_recipe.png" id="22_pbdvv"]
+[ext_resource type="Texture2D" uid="uid://bawolqoe1d01" path="res://assets/Bubbles.png" id="27_c6jkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bug8"]
 texture = ExtResource("1_5oeg8")
@@ -5557,6 +5558,29 @@ shape = SubResource("RectangleShape2D_vesd0")
 
 [node name="Cookbar" type="AnimatedSprite2D" parent="Stove"]
 sprite_frames = SubResource("SpriteFrames_7sxaj")
+
+[node name="RatInstructions" type="NinePatchRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RatInstructions"]
+position = Vector2(418, 529)
+scale = Vector2(0.567779, 0.444099)
+texture = ExtResource("27_c6jkh")
+
+[node name="Label" type="Label" parent="RatInstructions"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 498.0
+offset_right = 478.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_2p0sx")
+theme_override_font_sizes/font_size = 8
+text = "The rats are hungrier 
+now... 
+If they catch your food, 
+you will lose the game"
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
 [connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_recipe_recipe_picked_up"]

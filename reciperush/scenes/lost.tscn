@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://drfl73kjagk8v"]
+
+[ext_resource type="Script" path="res://scripts/lost.gd" id="1_bhea3"]
+[ext_resource type="Texture2D" uid="uid://bd0t718rn7gp8" path="res://assets/finalprototype welcome.png" id="1_xam8o"]
+[ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5bupa"]
+[ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="3_ihtfc"]
+[ext_resource type="Texture2D" uid="uid://ddluemishu6xi" path="res://assets/PlayAgain.png" id="5_1v85f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tp8"]
+size = Vector2(137, 39)
+
+[node name="Lost" type="Node2D"]
+script = ExtResource("1_bhea3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(967.33, 451.25)
+scale = Vector2(0.673657, 0.673657)
+texture = ExtResource("1_xam8o")
+
+[node name="You won" type="Label" parent="."]
+offset_left = 636.0
+offset_top = 279.0
+offset_right = 1145.0
+offset_bottom = 349.0
+theme_override_fonts/font = ExtResource("2_5bupa")
+theme_override_font_sizes/font_size = 69
+text = "You lost..."
+
+[node name="you\'ve done" type="Label" parent="You won"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 242.0
+offset_right = 862.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("3_ihtfc")
+theme_override_font_sizes/font_size = 25
+text = "this time the rats 
+infected the food..."
+
+[node name="promoted" type="Label" parent="You won"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 311.0
+offset_right = 884.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("2_5bupa")
+theme_override_font_sizes/font_size = 35
+text = "you need to try 
+again from 
+scratch! "
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(899, 461)
+zoom = Vector2(2, 2)
+
+[node name="play again" type="Area2D" parent="."]
+position = Vector2(716, 408)
+
+[node name="play again" type="Sprite2D" parent="play again"]
+position = Vector2(425.451, 358.575)
+scale = Vector2(0.385054, 0.386008)
+texture = ExtResource("5_1v85f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="play again"]
+position = Vector2(417.5, 347.5)
+shape = SubResource("RectangleShape2D_x1tp8")
+
+[connection signal="input_event" from="play again" to="." method="_on_play_again_input_event"]
