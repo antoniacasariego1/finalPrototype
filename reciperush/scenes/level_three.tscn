@@ -5432,7 +5432,7 @@ tile_set = SubResource("TileSet_nyobr")
 position = Vector2(289, 531)
 
 [node name="potato" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
-position = Vector2(313, 363)
+position = Vector2(335, 362)
 ingredient_name = "potato"
 
 [node name="cheese" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
@@ -5444,7 +5444,7 @@ position = Vector2(206, 171)
 ingredient_name = "pumpkin"
 
 [node name="tomato_soup" parent="." groups=["ingredients"] instance=ExtResource("12_rpwho")]
-position = Vector2(464, 275)
+position = Vector2(453, 275)
 ingredient_name = "tomato_soup"
 
 [node name="UI" type="CanvasLayer" parent="."]

@@ -22,8 +22,21 @@ func start_cooking():
 		print("Timer started!")
 	else:
 		print("Timer not found, changing scene manually.")
-		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+		var scene_path = get_tree().current_scene.scene_file_path
+		if scene_path.find("level_one") != -1:
+			get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+		elif scene_path.find("level_two") != -1:
+			get_tree().change_scene_to_file("res://scenes/level_three.tscn")
+		elif scene_path.find("level_three") != -1:
+			get_tree().change_scene_to_file("res://scenes/win.tscn")
+		
 
 func _on_timer_timeout():
-	print("Timer finished. Changing scene to Level 2...")
-	get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+	print("Timer finished. Changing level...")
+	var scene_path = get_tree().current_scene.scene_file_path
+	if scene_path.find("level_one") != -1:
+		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+	elif scene_path.find("level_two") != -1:
+		get_tree().change_scene_to_file("res://scenes/level_three.tscn")
+	elif scene_path.find("level_three") != -1:
+		get_tree().change_scene_to_file("res://scenes/win.tscn")
