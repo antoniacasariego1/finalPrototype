@@ -1,58 +1,78 @@
-[gd_scene load_steps=6 format=3 uid="uid://0yjg3e2tk3pw"]
+[gd_scene load_steps=6 format=3 uid="uid://bwtrry6vvw7pn"]
 
 [ext_resource type="Texture2D" uid="uid://ollfq1b3sv6k" path="res://scenes/howto.png" id="1_ehjhw"]
+[ext_resource type="Script" path="res://scripts/how_to.gd" id="1_gr4m4"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="2_gvajk"]
 [ext_resource type="FontFile" uid="uid://d1ax4kcmrne1y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_23nt4"]
-[ext_resource type="Script" path="res://scripts/back.gd" id="4_5b2h5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hakdh"]
 size = Vector2(342.439, 124.566)
 
 [node name="HowTo" type="Node2D"]
+script = ExtResource("1_gr4m4")
 
 [node name="Frame2" type="Sprite2D" parent="."]
 position = Vector2(1531.5, 1013.89)
 scale = Vector2(1.33435, 1.45419)
 texture = ExtResource("1_ehjhw")
 
-[node name="Label2" type="Label" parent="Frame2"]
-offset_left = -406.024
-offset_top = 267.423
-offset_right = 188.976
-offset_bottom = 412.423
+[node name="cook instruction" type="Label" parent="Frame2"]
+offset_left = 423.052
+offset_top = 372.792
+offset_right = 1021.06
+offset_bottom = 517.792
 theme_override_fonts/font = ExtResource("2_gvajk")
-theme_override_font_sizes/font_size = 55
-text = "Collect the 
-Ingredients"
+theme_override_font_sizes/font_size = 40
+text = "by standing next
+to the stove!"
 
-[node name="Label3" type="Label" parent="Frame2/Label2"]
-offset_left = 971.166
-offset_top = -480.401
-offset_right = 1569.17
-offset_bottom = -335.401
+[node name="opponent" type="Label" parent="Frame2"]
+offset_left = 461.273
+offset_top = -267.427
+offset_right = 1059.28
+offset_bottom = -122.427
 theme_override_fonts/font = ExtResource("2_gvajk")
-theme_override_font_sizes/font_size = 55
-text = "Avoid the 
-Rats"
+theme_override_font_sizes/font_size = 40
+text = "kill the opponent
+by clicking
+on them"
 
-[node name="Label2" type="Label" parent="Frame2/Label2"]
-offset_left = 861.429
-offset_top = 36.2969
-offset_right = 1459.43
-offset_bottom = 181.297
-theme_override_fonts/font = ExtResource("2_gvajk")
+[node name="cook" type="Label" parent="Frame2"]
+offset_left = 354.0
+offset_top = 301.0
+offset_right = 1035.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("3_23nt4")
 theme_override_font_sizes/font_size = 55
-text = "Cook the Dish!"
+text = "Cook the Dish"
 
-[node name="Label" type="Label" parent="Frame2"]
-offset_left = -480.096
-offset_top = -221.518
-offset_right = 114.904
-offset_bottom = -76.5181
+[node name="ingredient" type="Label" parent="Frame2"]
+offset_left = -404.317
+offset_top = 264.14
+offset_right = 190.683
+offset_bottom = 409.14
 theme_override_fonts/font = ExtResource("2_gvajk")
-theme_override_font_sizes/font_size = 65
-text = "Collect the 
-Recipe"
+theme_override_font_sizes/font_size = 40
+text = "collect the 
+ingredients"
+
+[node name="instruction" type="Label" parent="Frame2"]
+offset_left = -886.199
+offset_top = -410.462
+offset_right = 958.801
+offset_bottom = -275.462
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 40
+text = "use left, right, up, down arrows to walk around the kitchen"
+
+[node name="recipe" type="Label" parent="Frame2"]
+offset_left = -509.986
+offset_top = -228.23
+offset_right = 50.0139
+offset_bottom = -93.2301
+theme_override_fonts/font = ExtResource("2_gvajk")
+theme_override_font_sizes/font_size = 40
+text = "Collect the recipe "
 
 [node name="Welcome" type="Label" parent="Frame2"]
 offset_left = -469.122
@@ -64,9 +84,10 @@ theme_override_fonts/font = ExtResource("3_23nt4")
 theme_override_font_sizes/font_size = 100
 text = "How to Play?"
 
-[node name="Area2D" type="Area2D" parent="Frame2"]
-script = ExtResource("4_5b2h5")
+[node name="back" type="Area2D" parent="Frame2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame2/Area2D"]
-position = Vector2(-928.399, -589.122)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame2/back"]
+position = Vector2(-926.668, -589.256)
 shape = SubResource("RectangleShape2D_hakdh")
+
+[connection signal="input_event" from="Frame2/back" to="." method="_on_back_input_event"]

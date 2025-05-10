@@ -26,6 +26,14 @@ func _on_start_button_input_event(viewport, event, shape_idx):
 		if event.pressed:
 			print(\"Start button pressed!\")
 			get_tree().change_scene_to_file(\"res://scenes/level_one.tscn\")
+
+
+func _on_how_to_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		print(\"Clicked with mouse\")  # <--- this MUST show
+		if event.pressed:
+			print(\"Start button pressed!\")
+			get_tree().change_scene_to_file(\"res://scenes/how_to.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0kmh"]
@@ -114,4 +122,5 @@ shape = SubResource("RectangleShape2D_5eahl")
 position = Vector2(592, 317)
 zoom = Vector2(3, 3)
 
+[connection signal="input_event" from="HowToButton" to="." method="_on_how_to_button_input_event"]
 [connection signal="input_event" from="StartButton" to="." method="_on_start_button_input_event"]
