@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bkmqrkcxyucek" path="res://assets/Food Icons/Separated Icons/tomatosoup.png" id="21_tnl3p"]
 [ext_resource type="FontFile" uid="uid://b2yhwmb7nxe07" path="res://assets/fonts/PixelOperator8.ttf" id="22_2p0sx"]
 [ext_resource type="Texture2D" uid="uid://ck4n7m6yh3i1w" path="res://assets/level3_recipe.png" id="22_pbdvv"]
-[ext_resource type="PackedScene" uid="uid://b7i7guc6fuc3m" path="res://scenes/rival_chef.tscn" id="25_oacy3"]
+[ext_resource type="PackedScene" uid="uid://dy0wxk3nsyijb" path="res://scenes/rival_chef.tscn" id="25_oacy3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bug8"]
 texture = ExtResource("1_5oeg8")

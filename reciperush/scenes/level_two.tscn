@@ -5574,7 +5574,7 @@ offset_top = -23.0
 offset_right = 660.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_up6lm")
-text = "Watch out! Rats are trying to steal your ingredients!"
+text = ".."
 
 [connection signal="body_entered" from="recipe" to="recipe" method="_on_body_entered"]
 [connection signal="recipe_picked_up" from="recipe" to="." method="_on_recipe_picked_up"]

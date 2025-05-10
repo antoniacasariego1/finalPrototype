@@ -7,15 +7,11 @@ var ingredients_collected: Array[String] = []
 var all_ingredients_collected = false
 
 func _ready():
+	# Hide inventory at first
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	$UI/InventoryPanel.visible = false
 
-	# Show rat instructions temporarily
-	if $RatInstructions:
-		$RatInstructions.visible = true
-		await get_tree().create_timer(5.0).timeout
-		$RatInstructions.visible = false
-
+	# Connect all ingredients in the group
 	for ingredient in get_tree().get_nodes_in_group("ingredients"):
 		ingredient.picked_up.connect(_on_ingredient_picked)
 
