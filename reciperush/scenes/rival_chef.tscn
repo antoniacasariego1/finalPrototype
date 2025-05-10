@@ -1,0 +1,116 @@
+[gd_scene load_steps=17 format=3 uid="uid://dy0wxk3nsyijb"]
+
+[ext_resource type="Script" path="res://scripts/rival_chef.gd" id="1_ack84"]
+[ext_resource type="Texture2D" uid="uid://cvnmfhqlwil0i" path="res://sprites/Chef B1.png" id="2_gihut"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2ef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slhhp"]
+atlas = ExtResource("2_gihut")
+region = Rect2(10, 5, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwex5"]
+atlas = ExtResource("2_gihut")
+region = Rect2(10, 26, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el3q0"]
+atlas = ExtResource("2_gihut")
+region = Rect2(29, 5, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sofjc"]
+atlas = ExtResource("2_gihut")
+region = Rect2(48, 5, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pkt5"]
+atlas = ExtResource("2_gihut")
+region = Rect2(48, 26, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qunq6"]
+atlas = ExtResource("2_gihut")
+region = Rect2(11, 6, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8jta"]
+atlas = ExtResource("2_gihut")
+region = Rect2(11, 26, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krvjw"]
+atlas = ExtResource("2_gihut")
+region = Rect2(29, 6, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx6uj"]
+atlas = ExtResource("2_gihut")
+region = Rect2(47, 6, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2n4c"]
+atlas = ExtResource("2_gihut")
+region = Rect2(47, 26, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyri1"]
+atlas = ExtResource("2_gihut")
+region = Rect2(47, 46, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4x3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slhhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwex5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el3q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sofjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pkt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qunq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8jta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krvjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx6uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2n4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyri1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3h00e"]
+radius = 13.0
+height = 36.0
+
+[node name="Rival Chef" type="CharacterBody2D"]
+script = ExtResource("1_ack84")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(380, 590)
+shape = SubResource("CapsuleShape2D_vg2ef")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(371, 590)
+scale = Vector2(1.77924, 1.72619)
+sprite_frames = SubResource("SpriteFrames_y4x3a")
+frame_progress = 0.76824
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(380, 591)
+shape = SubResource("CapsuleShape2D_3h00e")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
